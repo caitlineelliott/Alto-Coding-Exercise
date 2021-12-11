@@ -28,7 +28,7 @@
 }
 
 .App-nav {
-  position: absolute;
+  position: fixed;
   right: 5vw;
   top: 2vh;
 }
