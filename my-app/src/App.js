@@ -1,5 +1,35 @@
-import logo from './logo.svg';
 import './App.css';
+
+
+function HeaderImg(props) {
+  return (
+    <h1>test</h1>
+  )
+}
+
+function Subtitle(props) {
+  return (
+    <h1>test</h1>
+  )
+}
+
+function Title(props) {
+  return (
+    <h1>test</h1>
+  )
+}
+
+function Description(props) {
+  return (
+    <h1>test</h1>
+  )
+}
+
+function Button(props) {
+  return (
+    <h1>test</h1>
+  )
+}
 
 function App() {
   return (
@@ -18,6 +48,7 @@ function App() {
               <li></li>
             </ul>
           </nav>
+          {/* VIEW 1
           <div className="Container-Row1">
             <div class="Trip-information">
               <h2>Your Trip</h2>
@@ -57,6 +88,19 @@ function App() {
               <button>Cancel Trip</button>
             </div>
           </div>
+          View 1 END END */}
+
+          {/* View 2-4 */}
+          <div className="Container-Row1">
+            <HeaderImg />
+          </div>
+          <div className="Container-Row2">
+            <Subtitle />
+            <Title />
+            <Description />
+            <Button />
+          </div>
+
           <footer className="App-footer">
             <div className="user-icon">Icon</div>
             <div className="trip-address">Trip Address</div>
