@@ -58,19 +58,19 @@ function App() {
             <div class="Trip-information">
               <h2>Your Trip</h2>
               <p>5:39PM</p>
-              <p>Estimated Arrival at DFW...</p>
+              <p>Estimated Arrival at {mission.trip.dropoff_location.name}</p>
               <div class="Trip-details-container">
                 <div class="Trip-details" id="trip-fare">
                   <p id="fare-label">Fare</p>
-                  <p id="fare-amount">Dollars</p>
+                  <p id="fare-amount">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
                 </div>
                 <div class="Trip-details" id="trip-passengers">
                   <p id="passenger-label">Passengers</p>
-                  <p id="passenger-amount">Count</p>
+                  <p id="passenger-amount">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
                 </div>
                 <div class="Trip-details" id="trip-payment">
                   <p id="payment-label">Payment</p>
-                  <p id="payment-type">Type</p>
+                  <p id="payment-type">{mission.trip.payment}</p>
                 </div>
               </div>
             </div>
@@ -78,15 +78,18 @@ function App() {
           <div className="Container-Row2">
             <div class="Trip-info">
               <div className="trip-start">
-                <p>Address</p>
-                <p>Address</p>
+                <p>{mission.trip.pickup_location.street_line1}</p>
+                <p>{mission.trip.pickup_location.street_line2}</p>
+                <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
               </div>
               <div className="trip-end">
-                <p>Address</p>
-                <p>Address</p>
+                <p>{mission.trip.dropoff_location.name}</p>
+                <p>{mission.trip.dropoff_location.street_line1}</p>
+                <p>{mission.trip.dropoff_location.street_line2}</p>
+                <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
               </div>
               <div className="trip-comments">
-                <p>Here is some special info about my trip pls</p>
+                <p>{mission.trip.notes}</p>
               </div>
             </div>
             <div class="Trip-actions">
