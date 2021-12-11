@@ -1,10 +1,8 @@
 import './App.css';
 import mission from '../src/assets/data/mission.json'
+import React from 'react';
 
-console.log(mission);
-
-let driverName = mission.driver.name;
-console.log(driverName)
+// states: summary, driver, vehicle, trip
 
 function HeaderImg(props) {
   return (
@@ -42,7 +40,7 @@ function App() {
   return (
     <main>
       <div className="App">
-        <div className="Container" id={driverName}>
+        <div className="Container">
           <header className="App-header">
             <h1>Alto</h1>
           </header>
@@ -55,7 +53,7 @@ function App() {
               <li></li>
             </ul>
           </nav>
-          {/* VIEW 1
+
           <div className="Container-Row1">
             <div class="Trip-information">
               <h2>Your Trip</h2>
@@ -95,7 +93,7 @@ function App() {
               <button>Cancel Trip</button>
             </div>
           </div>
-          View 1 END END */}
+          {/* View 1 END END */}
 
           {/* View 2-4 */}
           <div className="Container-Row1">

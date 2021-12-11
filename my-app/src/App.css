@@ -19,7 +19,7 @@
 
 .App-header,
 .App-footer {
-  position: absolute;
+  position: fixed;
   left: 0;
   width: 100vw;
   border: 1px solid green;
