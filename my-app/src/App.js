@@ -4,35 +4,20 @@ import React from 'react';
 
 // states: summary, driver, vehicle, trip
 
-function HeaderImg(props) {
+function TripInformation(props) {
   return (
-    <img src='my-app/src/assets/images/Driver_photo.png' alt="driver"></img>
-  )
-}
+    <div className='container'>
+      <div className="Container-Row1">
+        <img src={mission.driver.image} alt="Your Driver"></img>
+      </div >
+      <div className="Container-Row2">
+        <p>{props.subtitleText}</p>
+        <h1>{props.titleText}</h1>
+        <p>{props.descriptionText}</p>
+        <button>{props.buttonText}</button>
+      </div>
+    </div>
 
-function Subtitle(props) {
-  return (
-    <h1>
-      hi
-    </h1>
-  )
-}
-
-function Title(props) {
-  return (
-    <h1>test</h1>
-  )
-}
-
-function Description(props) {
-  return (
-    <p>test</p>
-  )
-}
-
-function Button(props) {
-  return (
-    <button>test</button>
   )
 }
 
@@ -55,7 +40,7 @@ function App() {
           </nav>
 
           <div className="Container-Row1">
-            <div class="Trip-information">
+            <div class="trip-info">
               <h2>Your Trip</h2>
               <p>5:39PM</p>
               <p>Estimated Arrival at {mission.trip.dropoff_location.name}</p>
@@ -98,16 +83,9 @@ function App() {
           </div>
           {/* View 1 END END */}
 
-          {/* View 2-4 */}
-          <div className="Container-Row1">
-            <HeaderImg src={'/Users/ceelliott/Documents/GitHub/Alto-Coding-Exercise/my-app/src/assets/images/Driver_photo.png'} />
-          </div>
-          <div className="Container-Row2">
-            <Subtitle />
-            <Title title={'Sarah'} />
-            <Description description={'hello'} />
-            <Button />
-          </div>
+          <TripInformation type={'driver'} subtitleText='Your Driver' titleText={mission.driver.name} descriptionText={mission.driver.bio} buttonText='Contact Driver' />
+          <TripInformation type={'vehicle'} subtitleText='Your Vehicle' titleText={mission.vehicle.license} descriptionText={mission.vehicle.make} buttonText='Identify Vehicle' />
+          <TripInformation type={'trip'} subtitleText='Your Trip' titleText={mission.trip.estimated_arrival} descriptionText={mission.vibe.name} buttonText='Change Vehicle Vibe' />
 
           <footer className="App-footer">
             <div className="user-icon">Icon</div>
