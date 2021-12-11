@@ -1,9 +1,13 @@
 import './App.css';
-import mission from '../src/assets/data/mission.json'
-import logo from '../src/assets/images/Alto_logo.png'
-
 import React from 'react';
 
+// Trip Data
+import mission from '../src/assets/data/mission.json'
+
+// Images
+import logo from '../src/assets/images/Alto_logo.png'
+
+// FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
@@ -45,7 +49,7 @@ function App() {
           <div className="Container-Row1">
             <div class="trip-info">
               <h2>Your Trip</h2>
-              <p>5:39PM</p>
+              <p class="eta-big">5:39<span id="amPm">PM</span></p>
               <p>Estimated Arrival at {mission.trip.dropoff_location.name}</p>
               <div class="Trip-details-container">
                 <div class="Trip-details" id="trip-fare">
@@ -86,15 +90,33 @@ function App() {
           </div>
           {/* View 1 END END */}
 
-          <TripInformation type={'driver'} subtitleText='Your Driver' titleText={mission.driver.name} descriptionText={mission.driver.bio} buttonText='Contact Driver' />
-          <TripInformation type={'vehicle'} subtitleText='Your Vehicle' titleText={mission.vehicle.license} descriptionText={mission.vehicle.make} buttonText='Identify Vehicle' />
-          <TripInformation type={'trip'} subtitleText='Your Trip' titleText={mission.trip.estimated_arrival} descriptionText={mission.vibe.name} buttonText='Change Vehicle Vibe' />
+          <TripInformation
+            type={'driver'}
+            subtitleText='Your Driver'
+            titleText={mission.driver.name}
+            descriptionText={mission.driver.bio}
+            buttonText='Contact Driver' />
+
+          <TripInformation
+            type={'vehicle'}
+            subtitleText='Your Vehicle'
+            titleText={mission.vehicle.license}
+            descriptionText={mission.vehicle.make}
+            buttonText='Identify Vehicle' />
+
+          <TripInformation
+            type={'trip'}
+            subtitleText='Your Trip'
+            titleText={mission.trip.estimated_arrival}
+            descriptionText={mission.vibe.name}
+            buttonText='Change Vehicle Vibe' />
 
           <footer className="App-footer">
             <div className="user-icon">Icon</div>
             <div className="trip-address">Trip Address</div>
             <div className="other-icon">Icon</div>
           </footer>
+
         </div>
       </div>
     </main>

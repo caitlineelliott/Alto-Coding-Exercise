@@ -1,3 +1,26 @@
+@font-face {
+  font-family: 'LinoTypeRegular';
+  src: url(../src/assets/fonts/Linotype\ -\ OptimaLTStd.otf) format('opentype');
+}
+
+@font-face {
+  font-family: 'PxGrotesk-Light';
+  src: url(../src/assets/fonts/PxGrotesk-Light.otf) format('opentype');
+}
+
+h2 {
+  font-family: 'LinoTypeRegular';
+}
+
+.eta-big {
+  font-family: 'PxGrotesk-Light';
+  font-size: 18vw;
+}
+
+#amPm {
+  font-size: 8vw;
+}
+
 .Container {
   height: 100vh;
   box-sizing: border-box;
