@@ -1,15 +1,22 @@
 import './App.css';
+import mission from '../src/assets/data/mission.json'
 
+console.log(mission);
+
+let driverName = mission.driver.name;
+console.log(driverName)
 
 function HeaderImg(props) {
   return (
-    <h1>test</h1>
+    <img src='my-app/src/assets/images/Driver_photo.png' alt="driver"></img>
   )
 }
 
 function Subtitle(props) {
   return (
-    <h1>test</h1>
+    <h1>
+      hi
+    </h1>
   )
 }
 
@@ -21,13 +28,13 @@ function Title(props) {
 
 function Description(props) {
   return (
-    <h1>test</h1>
+    <p>test</p>
   )
 }
 
 function Button(props) {
   return (
-    <h1>test</h1>
+    <button>test</button>
   )
 }
 
@@ -35,7 +42,7 @@ function App() {
   return (
     <main>
       <div className="App">
-        <div className="Container">
+        <div className="Container" id={driverName}>
           <header className="App-header">
             <h1>Alto</h1>
           </header>
@@ -92,12 +99,12 @@ function App() {
 
           {/* View 2-4 */}
           <div className="Container-Row1">
-            <HeaderImg />
+            <HeaderImg src={'/Users/ceelliott/Documents/GitHub/Alto-Coding-Exercise/my-app/src/assets/images/Driver_photo.png'} />
           </div>
           <div className="Container-Row2">
             <Subtitle />
-            <Title />
-            <Description />
+            <Title title={'Sarah'} />
+            <Description description={'hello'} />
             <Button />
           </div>
 
