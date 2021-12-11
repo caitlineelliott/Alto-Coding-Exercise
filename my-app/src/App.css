@@ -22,9 +22,11 @@
   position: fixed;
   left: 0;
   width: 100vw;
-  border: 1px solid green;
   box-sizing: border-box;
-  text-align: center;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-nav {
@@ -37,7 +39,6 @@
   bottom: 0;
   height: 10vh;
   display: flex;
-  
 }
 
 .trip-address {

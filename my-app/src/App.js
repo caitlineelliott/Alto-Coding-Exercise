@@ -1,6 +1,9 @@
 import './App.css';
 import mission from '../src/assets/data/mission.json'
+import logo from '../src/assets/images/Alto_logo.png'
+
 import React from 'react';
+
 
 // states: summary, driver, vehicle, trip
 
@@ -8,7 +11,7 @@ function TripInformation(props) {
   return (
     <div className='container'>
       <div className="Container-Row1">
-        <img src={mission.driver.image} alt="Your Driver"></img>
+        <img src='' alt="Your Driver"></img>
       </div >
       <div className="Container-Row2">
         <p>{props.subtitleText}</p>
@@ -27,7 +30,7 @@ function App() {
       <div className="App">
         <div className="Container">
           <header className="App-header">
-            <h1>Alto</h1>
+            <img src={logo} alt="Alto logo" />
           </header>
           <nav className="App-nav">
             <ul>
