@@ -50,7 +50,7 @@ function App() {
             <div class="trip-info">
               <h2>Your Trip</h2>
               <p class="eta-big">5:39<span id="amPm">PM</span></p>
-              <p>Estimated Arrival at {mission.trip.dropoff_location.name}</p>
+              <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
               <div class="Trip-details-container">
                 <div class="Trip-details" id="trip-fare">
                   <p id="fare-label">Fare</p>

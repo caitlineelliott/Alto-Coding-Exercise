@@ -8,21 +8,29 @@
   src: url(../src/assets/fonts/PxGrotesk-Light.otf) format('opentype');
 }
 
+body {
+  background-color: rgb(247, 243, 239)
+}
+
 h2 {
   font-family: 'LinoTypeRegular';
+  font-size: 8vw;
 }
 
 .eta-big {
   font-family: 'PxGrotesk-Light';
   font-size: 18vw;
+  margin: 0;
+}
+
+.eta-description {
+  font-size: 3.5vw;
+  font-family: 'PxGrotesk-Light';
+  margin-top: 0;
 }
 
 #amPm {
   font-size: 8vw;
-}
-
-body {
-  background-color: rgb(247, 243, 239)
 }
 
 .Container {
@@ -33,10 +41,10 @@ body {
 .Container-Row1,
 .Container-Row2 {
   height: 45vh;
-  border: 1px solid blue;
   box-sizing: border-box;
   display: flex;
   align-items: center;
+  padding: 30px;
 }
 
 .Container-Row2 {
@@ -88,12 +96,10 @@ body {
 /* view 1 */
 .trip-info {
   width: 100vw;
-  border: 1px solid lime;
   box-sizing: border-box;
 }
 
 .Trip-details-container {
-  border: 1px solid purple;
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
@@ -104,8 +110,10 @@ body {
 .Trip-details {
   width: 33%;
   text-align: center;
-  border: 1px solid pink;
   box-sizing: border-box;
+  font-family: 'PxGrotesk-Light';
+  font-size: 3.5vw;
+  text-align: left;;
 }
 
 .Trip-info {
