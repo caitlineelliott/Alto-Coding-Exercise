@@ -1,0 +1,93 @@
+.Container {
+  border: 1px solid red;
+  height: 100vh;
+  box-sizing: border-box;
+}
+
+.Container-Row1,
+.Container-Row2 {
+  height: 45vh;
+  border: 1px solid blue;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+
+.Container-Row2 {
+  flex-direction: column;
+}
+
+.App-header,
+.App-footer {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  border: 1px solid green;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.App-nav {
+  position: absolute;
+  right: 5vw;
+  top: 2vh;
+}
+
+.App-footer {
+  bottom: 0;
+  height: 10vh;
+  display: flex;
+  
+}
+
+.trip-address {
+  width: 85vw;
+}
+
+.user-icon,
+.other-icon {
+  width: 15vw;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+/* view 1 */
+.Trip-information {
+  width: 100vw;
+  border: 1px solid lime;
+  box-sizing: border-box;
+}
+
+.Trip-details-container {
+  border: 1px solid purple;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Trip-details {
+  width: 33%;
+  text-align: center;
+  border: 1px solid pink;
+  box-sizing: border-box;
+}
+
+.Trip-info {
+  border: 1px solid pink;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Trip-actions {
+  width: 100vw;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
