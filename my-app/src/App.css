@@ -21,10 +21,13 @@ h2 {
   font-size: 8vw;
 }
 
+body {
+  background-color: rgb(247, 243, 239)
+}
+
 .Container {
   height: 100vh;
   box-sizing: border-box;
-  background-color: rgb(247, 243, 239)
 }
 
 .Container-Row1,
