@@ -4,6 +4,9 @@ import logo from '../src/assets/images/Alto_logo.png'
 
 import React from 'react';
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
 // states: summary, driver, vehicle, trip
 
@@ -11,7 +14,6 @@ function TripInformation(props) {
   return (
     <div className='container'>
       <div className="Container-Row1">
-        <img src='' alt="Your Driver"></img>
       </div >
       <div className="Container-Row2">
         <p>{props.subtitleText}</p>
@@ -33,13 +35,11 @@ function App() {
             <img src={logo} alt="Alto logo" />
           </header>
           <nav className="App-nav">
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
+            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faCircleRegular} />
           </nav>
 
           <div className="Container-Row1">
