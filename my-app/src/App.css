@@ -201,3 +201,21 @@ h2 {
   background-position: center center;
   background-repeat: no-repeat;
 }
+
+/* views 2-4 */
+
+/* #subtitle
+
+#title
+
+#description */
+
+#button {
+  width: 90vw;
+  height: 5vh;
+  background: transparent;
+  border: 1px solid rgb(217,216,203);
+  text-transform: uppercase;
+  color:rgb(217,216,203);
+  font-family: 'PxGrotesk-Light';
+}

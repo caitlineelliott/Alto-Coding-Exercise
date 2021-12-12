@@ -55,10 +55,10 @@ function TripSections(props) {
 
       </div>
       <div className="Container-Row2">
-        <p>{props.subtitleText}</p>
-        <h1>{props.titleText}</h1>
-        <p>{props.descriptionText}</p>
-        <button>{props.buttonText}</button>
+        <p id="subtitle">{props.subtitleText}</p>
+        <h1 id="title">{props.titleText}</h1>
+        <p id="description">{props.descriptionText}</p>
+        <button id="button">{props.buttonText}</button>
 
         {props.type === 'summary' && <div>{props.etaText}</div>}
       </div>
