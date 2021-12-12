@@ -1,5 +1,6 @@
 import './App.css';
 import React from 'react';
+import { useEffect } from 'react';
 
 // Trip Data
 import mission from '../src/assets/data/mission.json'
@@ -12,15 +13,38 @@ import driverImg from '../src/assets/images/Driver_photo.png';
 import vehicleImg from '../src/assets/images/Vehicle_photo.png';
 import mapImg from '../src/assets/images/Map_overview.png';
 
-
 // FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
-// states: summary, driver, vehicle, trip
-
 function TripInformation(props) {
+  // Active Nav Styling
+  const handleActiveNav = () => {
+    let sections = document.querySelectorAll('.container');
+
+    for (let i = 0; i < sections.length; i++) {
+      let position = sections[i].getBoundingClientRect();
+      let activeNav = document.querySelector(`#${sections[i].firstChild.id}-nav`);
+      let vhTwoThirds = ((window.innerHeight / 3)) * 2;
+
+      // If current info top is < 2/3 of the window height
+      // And ALSO current info bottom is > 2/3 of the window height
+      if (position.top < vhTwoThirds && position.bottom > vhTwoThirds) {
+        activeNav.style.color = 'black'
+      } else {
+        activeNav.style.color = 'rgb(221,218,214)';
+      }
+
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleActiveNav, { passive: true });
+
+    return () => { window.removeEventListener('scroll', handleActiveNav); };
+  }, []);
+
   return (
     <div className='container'>
       <div className="Container-Row1 section-header-img" id={props.type} style={{
@@ -46,58 +70,60 @@ function App() {
             <img src={logo} alt="Alto logo" />
           </header>
           <nav className="App-nav">
-            <FontAwesomeIcon icon={faCircle} />
-            <FontAwesomeIcon icon={faCircle} />
-            <FontAwesomeIcon icon={faCircle} />
-            <FontAwesomeIcon icon={faCircle} />
+            <FontAwesomeIcon icon={faCircle} id='summary-nav' />
+            <FontAwesomeIcon icon={faCircle} id='driver-nav' />
+            <FontAwesomeIcon icon={faCircle} id='vehicle-nav' />
+            <FontAwesomeIcon icon={faCircle} id='trip-nav' />
             <FontAwesomeIcon icon={faCircleRegular} />
           </nav>
 
-          <div className="Container-Row1">
-            <div class="trip-info">
-              <h2>Your Trip</h2>
-              <div className="eta">
-                <p class="eta-big">5:39<span id="amPm">PM</span></p>
-                <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
-              </div>
-              <div class="Trip-details-container">
-                <div class="Trip-details" id="trip-fare">
-                  <p id="fare-label" class="label">Estimated Fare:</p>
-                  <p id="fare-amount" class="trip-num">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
+          <div className="container">
+            <div className="Container-Row1" id="summary">
+              <div class="trip-info">
+                <h2>Your Trip</h2>
+                <div className="eta">
+                  <p class="eta-big">5:39<span id="amPm">PM</span></p>
+                  <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
                 </div>
-                <div class="Trip-details" id="trip-passengers">
-                  <p id="passenger-label" class="label">Passengers:</p>
-                  <p id="passenger-amount" class="trip-num">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
-                </div>
-                <div class="Trip-details" id="trip-payment">
-                  <p id="payment-label" class="label">Payment:</p>
-                  <p id="payment-type" class="trip-num">{mission.trip.payment}</p>
+                <div class="Trip-details-container">
+                  <div class="Trip-details" id="trip-fare">
+                    <p id="fare-label" class="label">Estimated Fare:</p>
+                    <p id="fare-amount" class="trip-num">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
+                  </div>
+                  <div class="Trip-details" id="trip-passengers">
+                    <p id="passenger-label" class="label">Passengers:</p>
+                    <p id="passenger-amount" class="trip-num">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
+                  </div>
+                  <div class="Trip-details" id="trip-payment">
+                    <p id="payment-label" class="label">Payment:</p>
+                    <p id="payment-type" class="trip-num">{mission.trip.payment}</p>
+                  </div>
                 </div>
               </div>
             </div>
+            <div className="Container-Row2">
+              <div class="Trip-info">
+                <div className="trip-start">
+                  <p>{mission.trip.pickup_location.street_line1}</p>
+                  <p>{mission.trip.pickup_location.street_line2}</p>
+                  <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
+                </div>
+                <div className="trip-end">
+                  <p>{mission.trip.dropoff_location.name}</p>
+                  <p>{mission.trip.dropoff_location.street_line1}</p>
+                  <p>{mission.trip.dropoff_location.street_line2}</p>
+                  <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
+                </div>
+                <div className="trip-comments">
+                  <p>{mission.trip.notes}</p>
+                </div>
+              </div>
+              <div class="Trip-actions">
+                <button>Cancel Trip</button>
+              </div>
+            </div>
+            {/* View 1 END END */}
           </div>
-          <div className="Container-Row2">
-            <div class="Trip-info">
-              <div className="trip-start">
-                <p>{mission.trip.pickup_location.street_line1}</p>
-                <p>{mission.trip.pickup_location.street_line2}</p>
-                <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
-              </div>
-              <div className="trip-end">
-                <p>{mission.trip.dropoff_location.name}</p>
-                <p>{mission.trip.dropoff_location.street_line1}</p>
-                <p>{mission.trip.dropoff_location.street_line2}</p>
-                <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
-              </div>
-              <div className="trip-comments">
-                <p>{mission.trip.notes}</p>
-              </div>
-            </div>
-            <div class="Trip-actions">
-              <button>Cancel Trip</button>
-            </div>
-          </div>
-          {/* View 1 END END */}
 
           <TripInformation
             type={'driver'}

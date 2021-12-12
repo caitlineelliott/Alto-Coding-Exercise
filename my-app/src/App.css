@@ -108,6 +108,12 @@ h2 {
   display: flex;
   flex-direction: column;
   font-size: 0.75vh;
+  z-index: 1;
+  color: rgb(221,218,214);
+}
+
+#summary-nav {
+  color: black;
 }
 
 .App-nav > * {
