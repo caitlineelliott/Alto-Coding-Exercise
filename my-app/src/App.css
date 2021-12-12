@@ -80,6 +80,7 @@ h2 {
 .Container-Row2 {
   flex-direction: column;
   padding: 30px;
+  position: relative;
 }
 
 #trip {
@@ -89,7 +90,7 @@ h2 {
 }
 
 /* adjusts last container row 2 to compensate for footer height */
-.Container-Row2:last-of-type {
+#trip {
   height: 55vh;
 }
 
@@ -220,18 +221,29 @@ h2 {
 #title {
   font-size: 8vh;
   font-family: 'PxGrotesk-Light';
-  margin: 0;
+  margin: 20px 0;
   font-weight: lighter;
 }
 
-/* #description */
+hr {
+  border-top: 1px solid rgb(221,218,214);
+  width: 47%;
+  margin-left: 0;
+}
+
+#description {
+  font-family: 'PxGrotesk-Light';
+  font-size: 1.5vh;
+}
 
 #button {
-  width: 90vw;
+  width: calc(100vw - 60px);
   height: 5vh;
   background: transparent;
   border: 1px solid rgb(217,216,203);
   text-transform: uppercase;
   color:rgb(217,216,203);
   font-family: 'PxGrotesk-Light';
+  position: absolute;
+  bottom: 45px;
 }

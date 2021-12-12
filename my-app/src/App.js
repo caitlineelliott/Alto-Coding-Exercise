@@ -57,6 +57,7 @@ function TripSections(props) {
       <div className="Container-Row2">
         <p id="subtitle">{props.subtitleText}</p>
         <h1 id="title">{props.titleText}</h1>
+        {props.type === 'driver' && <hr />}
         <p id="description">{props.descriptionText}</p>
         <button id="button">{props.buttonText}</button>
 
