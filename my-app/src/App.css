@@ -77,6 +77,17 @@ h2 {
   flex-direction: column;
 }
 
+#trip {
+  background-color: lightblue;
+  -webkit-mask-image: linear-gradient(rgba(0,0,0,1) 70%, rgba(0,0,0,0));
+  mask-image: linear-gradient(rgba(0,0,0,1) 80%, rgba(0,0,0,0));
+}
+
+/* adjusts last container row 2 to compensate for footer height */
+.Container-Row2:last-of-type {
+  height: 55vh;
+}
+
 .App-header,
 .App-footer {
   position: fixed;
@@ -87,6 +98,7 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 1;
 }
 
 .App-nav {
