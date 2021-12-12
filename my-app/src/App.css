@@ -8,6 +8,11 @@
   src: url(../src/assets/fonts/PxGrotesk-Light.otf) format('opentype');
 }
 
+@font-face {
+  font-family: 'PxGrotesk-Regular';
+  src: url(../src/assets/fonts/PxGrotesk-Regular.otf) format('opentype');
+}
+
 /* Resets */
 p {
   margin: 0;
@@ -70,7 +75,6 @@ h2 {
   height: 45vh;
   box-sizing: border-box;
   display: flex;
-  align-items: center;
 }
 
 .Container-Row2 {
@@ -204,11 +208,22 @@ h2 {
 
 /* views 2-4 */
 
-/* #subtitle
+#subtitle {
+  text-transform: uppercase;
+  color:rgb(172,130,109);
+  font-family: 'PxGrotesk-Regular';
+  font-size: 1.25vh;
+  letter-spacing: 0.25vw;
+}
 
-#title
+#title {
+  font-size: 8vh;
+  font-family: 'PxGrotesk-Light';
+  margin: 0;
+  font-weight: lighter;
+}
 
-#description */
+/* #description */
 
 #button {
   width: 90vw;
