@@ -49,20 +49,22 @@ function App() {
           <div className="Container-Row1">
             <div class="trip-info">
               <h2>Your Trip</h2>
-              <p class="eta-big">5:39<span id="amPm">PM</span></p>
-              <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
+              <div className="eta">
+                <p class="eta-big">5:39<span id="amPm">PM</span></p>
+                <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
+              </div>
               <div class="Trip-details-container">
                 <div class="Trip-details" id="trip-fare">
-                  <p id="fare-label">Fare</p>
-                  <p id="fare-amount">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
+                  <p id="fare-label" class="label">Estimated Fare:</p>
+                  <p id="fare-amount" class="trip-num">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
                 </div>
                 <div class="Trip-details" id="trip-passengers">
-                  <p id="passenger-label">Passengers</p>
-                  <p id="passenger-amount">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
+                  <p id="passenger-label" class="label">Passengers:</p>
+                  <p id="passenger-amount" class="trip-num">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
                 </div>
                 <div class="Trip-details" id="trip-payment">
-                  <p id="payment-label">Payment</p>
-                  <p id="payment-type">{mission.trip.payment}</p>
+                  <p id="payment-label" class="label">Payment:</p>
+                  <p id="payment-type" class="trip-num">{mission.trip.payment}</p>
                 </div>
               </div>
             </div>
