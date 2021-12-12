@@ -47,15 +47,20 @@ function TripSections(props) {
 
   return (
     <div className='container'>
-      <div className="Container-Row1 section-header-img" id={props.type} style={{
-        backgroundImage: `url(${props.headerImg})`
-      }} />
+      <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
+
+        {props.type === 'summary' && <div>{props.subtitleText}</div>}
+        {props.type === 'summary' && <h1>{props.titleText}</h1>}
+        {props.type === 'summary' && <div>{props.etaText}</div>}
+
+      </div>
       <div className="Container-Row2">
         <p>{props.subtitleText}</p>
         <h1>{props.titleText}</h1>
-        <p>{props.etaText}</p>
         <p>{props.descriptionText}</p>
         <button>{props.buttonText}</button>
+
+        {props.type === 'summary' && <div>{props.etaText}</div>}
       </div>
     </div>
 
