@@ -44,6 +44,7 @@ h2 {
 
 .trip-info {
   width: 100%;
+  padding: 30px;
 }
 
 .label {
@@ -70,7 +71,6 @@ h2 {
   box-sizing: border-box;
   display: flex;
   align-items: center;
-  padding: 30px;
 }
 
 .Container-Row2 {
@@ -163,6 +163,7 @@ h2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 30px;
 }
 
 .Trip-actions {
@@ -173,3 +174,12 @@ h2 {
   align-items: center;
 }
 
+.section-header-img {
+  background-position-x: center;
+  background-position-y: 13%;
+}
+
+#vehicle {
+  background-position: center center;
+  background-repeat: no-repeat;
+}

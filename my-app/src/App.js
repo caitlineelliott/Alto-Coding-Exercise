@@ -8,6 +8,10 @@ import mission from '../src/assets/data/mission.json'
 import logo from '../src/assets/images/Alto_logo.png';
 import userProfileIcon from '../src/assets/images/Profile_icon.png';
 import vibesIcon from '../src/assets/images/Vibes_icon.png';
+import driverImg from '../src/assets/images/Driver_photo.png';
+import vehicleImg from '../src/assets/images/Vehicle_photo.png';
+import mapImg from '../src/assets/images/Map_overview.png';
+
 
 // FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -19,8 +23,9 @@ import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons
 function TripInformation(props) {
   return (
     <div className='container'>
-      <div className="Container-Row1">
-      </div >
+      <div className="Container-Row1 section-header-img" id={props.type} style={{
+        backgroundImage: `url(${props.headerImg})`
+      }} />
       <div className="Container-Row2">
         <p>{props.subtitleText}</p>
         <h1>{props.titleText}</h1>
@@ -96,6 +101,8 @@ function App() {
 
           <TripInformation
             type={'driver'}
+            headerImg={driverImg}
+            imgAltText='A photo of your driver'
             subtitleText='Your Driver'
             titleText={mission.driver.name}
             descriptionText={mission.driver.bio}
@@ -103,6 +110,8 @@ function App() {
 
           <TripInformation
             type={'vehicle'}
+            headerImg={vehicleImg}
+            imgAltText='A photo of your vehicle'
             subtitleText='Your Vehicle'
             titleText={mission.vehicle.license}
             descriptionText={mission.vehicle.make}
@@ -110,6 +119,8 @@ function App() {
 
           <TripInformation
             type={'trip'}
+            headerImg={mapImg}
+            imgAltText='A photo of your destination map'
             subtitleText='Your Trip'
             titleText={mission.trip.estimated_arrival}
             descriptionText={mission.vibe.name}
