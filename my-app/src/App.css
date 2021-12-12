@@ -79,6 +79,7 @@ h2 {
 
 .Container-Row2 {
   flex-direction: column;
+  padding: 30px;
 }
 
 #trip {
