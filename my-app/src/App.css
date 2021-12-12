@@ -247,3 +247,15 @@ hr {
   position: absolute;
   bottom: 45px;
 }
+
+
+/* CSS Snap Points Test */
+.Container {
+  overflow-y: auto;
+  scroll-snap-coordinate: 0 0;
+  scroll-snap-type: y mandatory;
+}
+
+.container {
+  scroll-snap-align: start;
+}

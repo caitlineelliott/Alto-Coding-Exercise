@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import { useEffect } from 'react';
+// import { useEffect } from 'react';
 
 // Trip Data
 import mission from '../src/assets/data/mission.json'
@@ -18,32 +18,48 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
-function TripSections(props) {
-  // Active Nav Styling
-  const handleActiveNav = () => {
-    let sections = document.querySelectorAll('.container');
 
-    for (let i = 0; i < sections.length; i++) {
-      let position = sections[i].getBoundingClientRect();
-      let activeNav = document.querySelector(`#${sections[i].firstChild.id}-nav`);
-      let vhTwoThirds = ((window.innerHeight / 3)) * 2;
+// Active Nav Styling
+const handleActiveNav = (e) => {
 
-      // If current info top is < 2/3 of the window height
-      // And ALSO current info bottom is > 2/3 of the window height
-      if (position.top < vhTwoThirds && position.bottom > vhTwoThirds) {
-        activeNav.style.color = 'black'
-      } else {
-        activeNav.style.color = 'rgb(221,218,214)';
-      }
+  for (let i = 2; i < e.target.children.length - 1; i++) {
+    let sections = e.target.children[i].firstChild.id;
+    let top = e.target.children[i].getBoundingClientRect().top;
+    let activeNav = document.querySelector(`#${sections}-nav`);
 
-    }
+    if (top < 1 && top > -1) { activeNav.style.color = 'black'; }
+    else { activeNav.style.color = 'rgb(221,218,214)'; }
   }
+}
 
-  useEffect(() => {
-    window.addEventListener('scroll', handleActiveNav, { passive: true });
+window.addEventListener('DOMContentLoaded', () => {
+  let parentContainer = document.querySelector('.Container');
+  parentContainer.addEventListener('scroll', handleActiveNav);
+});
 
-    return () => { window.removeEventListener('scroll', handleActiveNav); };
-  }, []);
+
+
+function TripSections(props) {
+
+
+  // let position = sections[i].getBoundingClientRect();
+
+  // let activeNav = document.querySelector(`#${sections[i].firstChild.id}-nav`);
+  // // let vhTwoThirds = ((window.innerHeight / 3)) * 2;
+
+  // // If current info top is < 2/3 of the window height
+  // // And ALSO current info bottom is > 2/3 of the window height
+  // if (position.top < window.innerHeight && position.top > 0) {
+  //   activeNav.style.color = 'black'
+  // } else {
+  //   activeNav.style.color = 'rgb(221,218,214)';
+  // }
+
+  // useEffect(() => {
+  //   window.addEventListener('scroll', handleActiveNav, { passive: true });
+
+  //   return () => { window.removeEventListener('scroll', handleActiveNav); };
+  // }, []);
 
   return (
     <div className='container'>
@@ -54,6 +70,7 @@ function TripSections(props) {
         {props.type === 'summary' && <div>{props.etaText}</div>}
 
       </div>
+
       <div className="Container-Row2">
         <p id="subtitle">{props.subtitleText}</p>
         <h1 id="title">{props.titleText}</h1>
@@ -78,7 +95,6 @@ function App() {
   hours = hours ? hours : 12; // the hour '0' should be '12'
   minutes = minutes < 10 ? '0' + minutes : minutes;
   var strTime = hours + ':' + minutes + ' ' + ampm;
-  console.log(strTime)
 
   return (
     <main>
