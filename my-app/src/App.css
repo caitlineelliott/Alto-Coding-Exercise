@@ -259,3 +259,75 @@ hr {
 .container {
   scroll-snap-align: start;
 }
+
+.phone-frame {
+  background-image: none;
+}
+
+/* Desktop View */
+@media only screen and (min-width: 1000px) {
+ .App {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100vh;
+   box-sizing: border-box;
+ }
+
+ .phone-frame {
+   width: 25vw;
+   height: 95vh;
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ }
+ 
+  .Container {
+   width: 95%;
+   height: 97%;
+   z-index: 1;
+   position: absolute;
+   /* border: 10px solid black;
+   border-radius: 50px;  */
+  
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+  
+  }
+
+ .App-footer {
+   width: 23vw;
+ }
+
+ .App-header {
+   position: sticky;
+   top: 0;
+   left: 0;
+   width: 100%;
+ }
+
+ .App-footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  border-top: 1px solid rgb(221,218,214);
+  background-color: rgb(247, 243, 239);
+  font-family: 'PxGrotesk-Light';
+  font-size: 1vw;
+}
+
+ .App-nav {
+  width: 1vw;
+  margin: 0 auto;
+
+  position: fixed;
+  left: 25vw; /* same value as App width */
+}
+
+}

@@ -12,6 +12,7 @@ import vibesIcon from '../src/assets/images/Vibes_icon.png';
 import driverImg from '../src/assets/images/Driver_photo.png';
 import vehicleImg from '../src/assets/images/Vehicle_photo.png';
 import mapImg from '../src/assets/images/Map_overview.png';
+import phoneFrame from '../src/assets/images/Phone_frame.png';
 
 // FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -40,27 +41,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 function TripSections(props) {
-
-
-  // let position = sections[i].getBoundingClientRect();
-
-  // let activeNav = document.querySelector(`#${sections[i].firstChild.id}-nav`);
-  // // let vhTwoThirds = ((window.innerHeight / 3)) * 2;
-
-  // // If current info top is < 2/3 of the window height
-  // // And ALSO current info bottom is > 2/3 of the window height
-  // if (position.top < window.innerHeight && position.top > 0) {
-  //   activeNav.style.color = 'black'
-  // } else {
-  //   activeNav.style.color = 'rgb(221,218,214)';
-  // }
-
-  // useEffect(() => {
-  //   window.addEventListener('scroll', handleActiveNav, { passive: true });
-
-  //   return () => { window.removeEventListener('scroll', handleActiveNav); };
-  // }, []);
-
   return (
     <div className='container'>
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
@@ -99,6 +79,7 @@ function App() {
   return (
     <main>
       <div className="App">
+        {/* <div className="phone-frame" style={{ backgroundImage: `url(${phoneFrame})` }}> */}
         <div className="Container">
           <header className="App-header">
             <img src={logo} alt="Alto logo" />
@@ -156,6 +137,7 @@ function App() {
           </footer>
 
         </div>
+        {/* </div> */}
       </div >
     </main >
   );
