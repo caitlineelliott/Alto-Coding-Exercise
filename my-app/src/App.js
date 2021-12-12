@@ -18,7 +18,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
-function TripInformation(props) {
+function TripSections(props) {
   // Active Nav Styling
   const handleActiveNav = () => {
     let sections = document.querySelectorAll('.container');
@@ -53,6 +53,7 @@ function TripInformation(props) {
       <div className="Container-Row2">
         <p>{props.subtitleText}</p>
         <h1>{props.titleText}</h1>
+        <p>{props.etaText}</p>
         <p>{props.descriptionText}</p>
         <button>{props.buttonText}</button>
       </div>
@@ -62,6 +63,17 @@ function TripInformation(props) {
 }
 
 function App() {
+  // ETA Date & Time
+  let date = new Date(mission.trip.estimated_arrival);
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  var strTime = hours + ':' + minutes + ' ' + ampm;
+  console.log(strTime)
+
   return (
     <main>
       <div className="App">
@@ -77,55 +89,15 @@ function App() {
             <FontAwesomeIcon icon={faCircleRegular} />
           </nav>
 
-          <div className="container">
-            <div className="Container-Row1" id="summary">
-              <div class="trip-info">
-                <h2>Your Trip</h2>
-                <div className="eta">
-                  <p class="eta-big">5:39<span id="amPm">PM</span></p>
-                  <p class="eta-description">Estimated Arrival at {mission.trip.dropoff_location.name}</p>
-                </div>
-                <div class="Trip-details-container">
-                  <div class="Trip-details" id="trip-fare">
-                    <p id="fare-label" class="label">Estimated Fare:</p>
-                    <p id="fare-amount" class="trip-num">${mission.trip.estimated_fare_min.toString().slice(0, 2)} - ${mission.trip.estimated_fare_max.toString().slice(0, 2)}</p>
-                  </div>
-                  <div class="Trip-details" id="trip-passengers">
-                    <p id="passenger-label" class="label">Passengers:</p>
-                    <p id="passenger-amount" class="trip-num">{mission.trip.passengers_min} - {mission.trip.passengers_max}</p>
-                  </div>
-                  <div class="Trip-details" id="trip-payment">
-                    <p id="payment-label" class="label">Payment:</p>
-                    <p id="payment-type" class="trip-num">{mission.trip.payment}</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="Container-Row2">
-              <div class="Trip-info">
-                <div className="trip-start">
-                  <p>{mission.trip.pickup_location.street_line1}</p>
-                  <p>{mission.trip.pickup_location.street_line2}</p>
-                  <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
-                </div>
-                <div className="trip-end">
-                  <p>{mission.trip.dropoff_location.name}</p>
-                  <p>{mission.trip.dropoff_location.street_line1}</p>
-                  <p>{mission.trip.dropoff_location.street_line2}</p>
-                  <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
-                </div>
-                <div className="trip-comments">
-                  <p>{mission.trip.notes}</p>
-                </div>
-              </div>
-              <div class="Trip-actions">
-                <button>Cancel Trip</button>
-              </div>
-            </div>
-            {/* View 1 END END */}
-          </div>
+          <TripSections
+            type={'summary'}
+            subtitleText={'Your Trip'}
+            etaText={`Estimated arrival at ${mission.trip.dropoff_location.name}`}
+            titleText={strTime}
+            buttonText='Cancel Trip'
+          />
 
-          <TripInformation
+          <TripSections
             type={'driver'}
             headerImg={driverImg}
             imgAltText='A photo of your driver'
@@ -134,7 +106,7 @@ function App() {
             descriptionText={mission.driver.bio}
             buttonText='Contact Driver' />
 
-          <TripInformation
+          <TripSections
             type={'vehicle'}
             headerImg={vehicleImg}
             imgAltText='A photo of your vehicle'
@@ -143,7 +115,7 @@ function App() {
             descriptionText={mission.vehicle.make}
             buttonText='Identify Vehicle' />
 
-          <TripInformation
+          <TripSections
             type={'trip'}
             headerImg={mapImg}
             imgAltText='A photo of your destination map'
