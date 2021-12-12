@@ -5,7 +5,9 @@ import React from 'react';
 import mission from '../src/assets/data/mission.json'
 
 // Images
-import logo from '../src/assets/images/Alto_logo.png'
+import logo from '../src/assets/images/Alto_logo.png';
+import userProfileIcon from '../src/assets/images/Profile_icon.png';
+import vibesIcon from '../src/assets/images/Vibes_icon.png';
 
 // FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -114,14 +116,17 @@ function App() {
             buttonText='Change Vehicle Vibe' />
 
           <footer className="App-footer">
-            <div className="user-icon">Icon</div>
-            <div className="trip-address">Trip Address</div>
-            <div className="other-icon">Icon</div>
+            <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>
+            <div className="trip-address">
+              <p className="trip-address-bold">{mission.trip.dropoff_location.name}</p>
+              <p>{mission.trip.estimated_arrival}</p>
+            </div>
+            <div className="other-icon"><img src={vibesIcon} alt="Change Vibes Icon" /></div>
           </footer>
 
         </div>
-      </div>
-    </main>
+      </div >
+    </main >
   );
 }
 

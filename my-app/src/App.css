@@ -103,20 +103,40 @@ h2 {
 }
 
 .App-footer {
-  bottom: 0;
+  bottom: 3vh;
   height: 10vh;
   display: flex;
+  border-top: 1px solid rgb(221,218,214);
+  background-color: rgb(247, 243, 239);
+  font-family: 'PxGrotesk-Light';
+  font-size: 3.5vw;
 }
 
 .trip-address {
   width: 85vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.trip-address-bold {
+  font-weight: bold;
 }
 
 .user-icon,
 .other-icon {
   width: 15vw;
-  border: 1px solid black;
-  box-sizing: border-box;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-icon > img,
+.other-icon > img {
+  padding: 20px;
 }
 
 /* view 1 */
@@ -152,3 +172,4 @@ h2 {
   justify-content: center;
   align-items: center;
 }
+
