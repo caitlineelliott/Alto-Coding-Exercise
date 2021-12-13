@@ -52,7 +52,7 @@ function TripSections(props) {
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
         {props.type === 'summary' && <div>{props.subtitleText}</div>}
-        {props.type === 'summary' && <h1 id='title'>{props.titleText}</h1>}
+        {props.type === 'summary' && <h1 className='title'>{props.titleText}</h1>}
         {props.type === 'summary' && <div>{props.etaText}</div>}
 
         {/* Trip Details for View 1 #summary Only */}
@@ -94,11 +94,11 @@ function TripSections(props) {
       </div>
 
       <div className="Container-Row2">
-        {props.type !== 'summary' && <p id="subtitle">{props.subtitleText}</p>}
-        {props.type !== 'summary' && < h1 id="title">{props.titleText}</h1>}
+        {props.type !== 'summary' && <p className="subtitle">{props.subtitleText}</p>}
+        {props.type !== 'summary' && < h1 className="title">{props.titleText}</h1>}
         {props.type === 'driver' && <hr />}
 
-        <div id="description">
+        <div className="description">
           {props.descriptionText}
 
           {props.type === 'summary' && <div id="pickup-location">
@@ -143,7 +143,7 @@ function TripSections(props) {
           }
         </div>
 
-        <button id="button">{props.buttonText}</button>
+        <button className="button">{props.buttonText}</button>
       </div>
     </div >
 
