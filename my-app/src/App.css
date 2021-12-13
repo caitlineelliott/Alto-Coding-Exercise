@@ -262,6 +262,11 @@ hr {
   bottom: 4vh;
 }
 
+#button:hover {
+color:   rgb(247, 243, 239);
+  background-color:rgb(217,216,203);
+}
+
 
 /* CSS Snap Points Test */
 .Container {
