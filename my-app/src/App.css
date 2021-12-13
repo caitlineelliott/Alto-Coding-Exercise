@@ -76,6 +76,7 @@ h2 {
   box-sizing: border-box;
   display: flex;
   border: 1px solid red;
+  flex-direction: column;
 }
 
 .Container-Row2 {

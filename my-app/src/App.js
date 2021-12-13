@@ -51,50 +51,74 @@ function TripSections(props) {
     <div className='container'>
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
-        {/* {props.type === 'summary' && <div>{props.subtitleText}</div>}
-        {props.type === 'summary' && <h1>{props.titleText}</h1>}
-        {props.type === 'summary' && <div>{props.etaText}</div>} */}
+        {props.type === 'summary' && <div>{props.subtitleText}</div>}
+        {props.type === 'summary' && <h1 id='title'>{props.titleText}</h1>}
+        {props.type === 'summary' && <div>{props.etaText}</div>}
 
-        {
-          props.type === 'summary' &&
-          <SectionDetails
-            id="fare"
-            label="fare-label"
-            displayLabel="Estimated Fare:"
-            detail="fare-num"
-            displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`}
-          />
-        }
+        {/* Trip Details for View 1 #summary Only */}
+        <div class="Trip-details-container" id={`${props.type}-details`}>
+          {
+            props.type === 'summary' &&
+            <SectionDetails
+              id="fare"
+              label="fare-label"
+              displayLabel="Estimated Fare:"
+              detail="fare-num"
+              displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`}
+            />
+          }
 
-        {
-          props.type === 'summary' &&
-          <SectionDetails
-            id="passengers"
-            label="passengers-label"
-            displayLabel="Passengers:"
-            detail="passengers-num"
-            displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`}
-          />
-        }
+          {
+            props.type === 'summary' &&
+            <SectionDetails
+              id="passengers"
+              label="passengers-label"
+              displayLabel="Passengers:"
+              detail="passengers-num"
+              displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`}
+            />
+          }
 
-        {
-          props.type === 'summary' &&
-          <SectionDetails
-            id="payment"
-            label="payment-label"
-            displayLabel="Payment:"
-            detail="payment-type"
-            displayDetail={mission.trip.payment}
-          />
-        }
+          {
+            props.type === 'summary' &&
+            <SectionDetails
+              id="payment"
+              label="payment-label"
+              displayLabel="Payment:"
+              detail="payment-type"
+              displayDetail={mission.trip.payment}
+            />
+          }
+        </div>
 
       </div>
 
       <div className="Container-Row2">
-        <p id="subtitle">{props.subtitleText}</p>
-        <h1 id="title">{props.titleText}</h1>
+        {props.type !== 'summary' && <p id="subtitle">{props.subtitleText}</p>}
+        {props.type !== 'summary' && < h1 id="title">{props.titleText}</h1>}
         {props.type === 'driver' && <hr />}
-        <p id="description">{props.descriptionText}</p>
+
+        <div id="description">
+          {props.descriptionText}
+
+          {props.type === 'summary' && <div id="pickup-location">
+            <p>{mission.trip.pickup_location.street_line1}</p>
+            <p>{mission.trip.pickup_location.street_line2}</p>
+            <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
+          </div>}
+
+          {props.type === 'summary' && <div id="dropoff-location">
+            <p>{mission.trip.dropoff_location.name}</p>
+            <p>{mission.trip.dropoff_location.street_line1}</p>
+            <p>{mission.trip.dropoff_location.street_line2}</p>
+            <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
+          </div>}
+
+          {props.type === 'summary' && <div id="trip-notes">
+            <p>{mission.trip.notes}</p>
+          </div>}
+        </div>
+
         <div class="Trip-details-container" id={`${props.type}-details`}>
           {
             props.type === 'vehicle' &&
@@ -120,8 +144,6 @@ function TripSections(props) {
         </div>
 
         <button id="button">{props.buttonText}</button>
-
-        {props.type === 'summary' && <div>{props.etaText}</div>}
       </div>
     </div >
 
