@@ -319,13 +319,11 @@ hr {
    height: 97%;
    z-index: 1;
    position: absolute;
-   /* border: 10px solid black;
-   border-radius: 50px;  */
-  
+   border: 10px solid black;
+   border-radius: 50px;
    background-size: cover;
    background-position: center center;
    background-repeat: no-repeat;
-  
   }
 
  .App-footer {

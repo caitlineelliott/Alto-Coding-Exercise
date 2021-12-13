@@ -60,9 +60,31 @@ function TripSections(props) {
           <SectionDetails
             id="fare"
             label="fare-label"
-            displayLabel="Estimated Fare"
+            displayLabel="Estimated Fare:"
             detail="fare-num"
             displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`}
+          />
+        }
+
+        {
+          props.type === 'summary' &&
+          <SectionDetails
+            id="passengers"
+            label="passengers-label"
+            displayLabel="Passengers:"
+            detail="passengers-num"
+            displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`}
+          />
+        }
+
+        {
+          props.type === 'summary' &&
+          <SectionDetails
+            id="payment"
+            label="payment-label"
+            displayLabel="Payment:"
+            detail="payment-type"
+            displayDetail={mission.trip.payment}
           />
         }
 
