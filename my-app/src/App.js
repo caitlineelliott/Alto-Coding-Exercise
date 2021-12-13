@@ -37,14 +37,34 @@ window.addEventListener('DOMContentLoaded', () => {
   parentContainer.addEventListener('scroll', handleActiveNav);
 });
 
+function SectionDetails(props) {
+  return (
+    <div class="Trip-details" id={props.id}>
+      <p id={props.label} class="label">{props.displayLabel}</p>
+      <p id={props.detail} class="trip-num">{props.displayDetail}</p>
+    </div>
+  )
+}
+
 function TripSections(props) {
   return (
     <div className='container'>
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
-        {props.type === 'summary' && <div>{props.subtitleText}</div>}
+        {/* {props.type === 'summary' && <div>{props.subtitleText}</div>}
         {props.type === 'summary' && <h1>{props.titleText}</h1>}
-        {props.type === 'summary' && <div>{props.etaText}</div>}
+        {props.type === 'summary' && <div>{props.etaText}</div>} */}
+
+        {
+          props.type === 'summary' &&
+          <SectionDetails
+            id="fare"
+            label="fare-label"
+            displayLabel="Estimated Fare"
+            detail="fare-num"
+            displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`}
+          />
+        }
 
       </div>
 
@@ -53,11 +73,35 @@ function TripSections(props) {
         <h1 id="title">{props.titleText}</h1>
         {props.type === 'driver' && <hr />}
         <p id="description">{props.descriptionText}</p>
+        <div class="Trip-details-container" id={`${props.type}-details`}>
+          {
+            props.type === 'vehicle' &&
+            <SectionDetails
+              id="make-model"
+              label="make-model-label"
+              displayLabel="Make / Model"
+              detail="make-model-type"
+              displayDetail={mission.vehicle.make}
+            />
+          }
+
+          {
+            props.type === 'vehicle' &&
+            <SectionDetails
+              id="vehicle-color"
+              label="vehicle-color-label"
+              displayLabel="Color"
+              detail="color-type"
+              displayDetail={mission.vehicle.color}
+            />
+          }
+        </div>
+
         <button id="button">{props.buttonText}</button>
 
         {props.type === 'summary' && <div>{props.etaText}</div>}
       </div>
-    </div>
+    </div >
 
   )
 }
@@ -112,7 +156,6 @@ function App() {
             imgAltText='A photo of your vehicle'
             subtitleText='Your Vehicle'
             titleText={mission.vehicle.license}
-            descriptionText={mission.vehicle.make}
             buttonText='Identify Vehicle' />
 
           <TripSections
