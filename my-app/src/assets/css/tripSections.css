@@ -12,10 +12,6 @@
     position: relative;
   }
 
-  .Container-Row2:last-of-type {
-    height: 55vh;
-  }
-
 #driver {
     background-position-x: 46%;
     background-position-y: 20%;
@@ -64,16 +60,22 @@
     font-weight: bold;
 }
 
-hr {
-    border-top: 1px solid rgb(221,218,214);
-    width: 50%;
-    margin-left: 0;
-  }
-
   .description {
     font-family: 'PxGrotesk-Light';
     font-size: 1.6vh;
     color: rgb(30,29,30);
+    position: relative;
+    padding-top: 10px;
+  }
+
+  .description:before {
+    content: '';
+    position: absolute;
+    left    : 0;
+    top  : 0;
+    height  : 1px;
+    width   : 50%;  /* or 100px */
+    border-top:1px solid rgb(221,218,214);
   }
 
   .button {

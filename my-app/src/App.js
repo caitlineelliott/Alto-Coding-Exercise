@@ -64,6 +64,77 @@ function SectionDetails(props) {
   )
 }
 
+function SectionRows(props) {
+  return (
+    <div className="Container-Row2" id={`${props.type}-containerRow2`}>
+      <div className="row1">
+        <p className="subtitle">{props.subtitleText}</p>
+        <h1 className="title">{props.titleText}</h1>
+        {props.type === 'trip' && <CarETA />}
+      </div>
+      <div className="row2" id={`${props.type}-row2`}>
+        {props.type === 'driver' &&
+          <div className="description">{props.descriptionText}</div>}
+
+        <div class="Trip-details-container" id={`${props.type}-details`}>
+          {
+            props.type === 'vehicle' &&
+            <SectionDetails
+              id="make-model"
+              label="make-model-label"
+              displayLabel="Make / Model"
+              detail="make-model-type"
+              displayDetail={mission.vehicle.make}
+            />
+          }
+
+          {
+            props.type === 'vehicle' &&
+            <SectionDetails
+              id="vehicle-color"
+              label="vehicle-color-label"
+              displayLabel="Color"
+              detail="color-type"
+              displayDetail={mission.vehicle.color}
+            />
+          }
+
+          {
+            props.type === 'trip' &&
+            <SectionDetails
+              id="vehicle-vibe"
+              label="vibe-label"
+              displayLabel="Vehicle Vibe:"
+              detail="vibe-name"
+              displayDetail={mission.vibe.name}
+            />
+          }
+
+        </div>
+
+        <button className="button" id={`${props.type}-btn`}>{props.buttonText}</button>
+      </div>
+
+      {props.type === 'summary' && <div id="pickup-location">
+        <p>{mission.trip.pickup_location.street_line1}</p>
+        <p>{mission.trip.pickup_location.street_line2}</p>
+        <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
+      </div>}
+
+      {props.type === 'summary' && <div id="dropoff-location">
+        <p>{mission.trip.dropoff_location.name}</p>
+        <p>{mission.trip.dropoff_location.street_line1}</p>
+        <p>{mission.trip.dropoff_location.street_line2}</p>
+        <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
+      </div>}
+
+      {props.type === 'summary' && <div id="trip-notes">
+        <p>{mission.trip.notes}</p>
+      </div>}
+    </div>
+  )
+}
+
 function TripSections(props) {
   return (
     <div className='container'>
@@ -110,72 +181,32 @@ function TripSections(props) {
 
       </div>
 
-      <div className="Container-Row2">
-        {props.type !== 'summary' && <p className="subtitle">{props.subtitleText}</p>}
-        {props.type === 'driver' && <h1 className="title">{props.titleText}</h1>}
-        {props.type === 'vehicle' && <h1 className="title">{props.titleText}</h1>}
-        {props.type === 'trip' && <CarETA />}
-        {props.type === 'driver' && <hr />}
+      {props.type === 'driver' &&
+        <SectionRows
+          type={'driver'}
+          subtitleText='Your Driver'
+          titleText={mission.driver.name}
+          descriptionText={mission.driver.bio}
+          buttonText='Contact Driver'
+        />
+      }
 
-        <div className="description">
-          {props.descriptionText}
+      {props.type === 'vehicle' &&
+        <SectionRows
+          type={'vehicle'}
+          subtitleText='Your Vehicle'
+          titleText={mission.vehicle.license}
+          buttonText='Identify Vehicle'
+        />
+      }
 
-          {props.type === 'summary' && <div id="pickup-location">
-            <p>{mission.trip.pickup_location.street_line1}</p>
-            <p>{mission.trip.pickup_location.street_line2}</p>
-            <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
-          </div>}
-
-          {props.type === 'summary' && <div id="dropoff-location">
-            <p>{mission.trip.dropoff_location.name}</p>
-            <p>{mission.trip.dropoff_location.street_line1}</p>
-            <p>{mission.trip.dropoff_location.street_line2}</p>
-            <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
-          </div>}
-
-          {props.type === 'summary' && <div id="trip-notes">
-            <p>{mission.trip.notes}</p>
-          </div>}
-        </div>
-
-        <div class="Trip-details-container" id={`${props.type}-details`}>
-          {
-            props.type === 'vehicle' &&
-            <SectionDetails
-              id="make-model"
-              label="make-model-label"
-              displayLabel="Make / Model"
-              detail="make-model-type"
-              displayDetail={mission.vehicle.make}
-            />
-          }
-
-          {
-            props.type === 'vehicle' &&
-            <SectionDetails
-              id="vehicle-color"
-              label="vehicle-color-label"
-              displayLabel="Color"
-              detail="color-type"
-              displayDetail={mission.vehicle.color}
-            />
-          }
-
-          {
-            props.type === 'trip' &&
-            <SectionDetails
-              id="vehicle-vibe"
-              label="vibe-label"
-              displayLabel="Vehicle Vibe:"
-              detail="vibe-name"
-              displayDetail={mission.vibe.name}
-            />
-          }
-
-        </div>
-
-        <button className="button" id={`${props.type}-btn`}>{props.buttonText}</button>
-      </div>
+      {props.type === 'trip' &&
+        <SectionRows
+          type={'trip'}
+          subtitleText='Your Trip'
+          buttonText='Change Vehicle Vibe'
+        />
+      }
     </div >
 
   )
@@ -202,32 +233,24 @@ function App() {
             type={'summary'}
             subtitleText={'Your Trip'}
             etaText={`Estimated arrival at ${mission.trip.dropoff_location.name}`}
-            buttonText='Cancel Trip'
           />
 
           <TripSections
             type={'driver'}
             headerImg={driverImg}
-            imgAltText='A photo of your driver'
-            subtitleText='Your Driver'
-            titleText={mission.driver.name}
-            descriptionText={mission.driver.bio}
-            buttonText='Contact Driver' />
+            imgAltText='A photo of your driver' />
 
           <TripSections
             type={'vehicle'}
             headerImg={vehicleImg}
             imgAltText='A photo of your vehicle'
-            subtitleText='Your Vehicle'
-            titleText={mission.vehicle.license}
             buttonText='Identify Vehicle' />
 
           <TripSections
             type={'trip'}
             headerImg={mapImg}
             imgAltText='A photo of your destination map'
-            subtitleText='Your Trip'
-            buttonText='Change Vehicle Vibe' />
+          />
 
           <footer className="App-footer">
             <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>

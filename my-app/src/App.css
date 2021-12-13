@@ -16,6 +16,18 @@
   src: url(../src/assets/fonts/PxGrotesk-Regular.otf) format('opentype');
 }
 
+/* Section Rows*/
+.row1,
+.row2 {
+  height: calc((45vh / 2) - 30px);
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+
+#trip-containerRow2 {
+  height: 55vh;
+}
+
 /* Resets */
 p {
   margin: 0;
