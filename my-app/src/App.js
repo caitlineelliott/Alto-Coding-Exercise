@@ -19,7 +19,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
-
 // Active Nav Styling
 const handleActiveNav = (e) => {
   for (let i = 2; i < e.target.children.length - 1; i++) {
@@ -37,6 +36,25 @@ window.addEventListener('DOMContentLoaded', () => {
   parentContainer.addEventListener('scroll', handleActiveNav);
 });
 
+function CarETA(props) {
+  // ETA Date & Time
+  let date = new Date(mission.trip.estimated_arrival);
+  var hours = date.getHours();
+  var minutes = date.getMinutes();
+  var ampm = hours >= 12 ? 'pm' : 'am';
+  hours = hours % 12;
+  hours = hours ? hours : 12; // the hour '0' should be '12'
+  minutes = minutes < 10 ? '0' + minutes : minutes;
+  var carETA = hours + ':' + minutes + ampm;
+
+  return (
+    <div className="eta">
+      <h1 class="title carETA">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></h1>
+      <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
+    </div>
+  )
+}
+
 function SectionDetails(props) {
   return (
     <div class="Trip-details" id={props.id}>
@@ -52,8 +70,7 @@ function TripSections(props) {
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
         {props.type === 'summary' && <div>{props.subtitleText}</div>}
-        {props.type === 'summary' && <h1 className='title'>{props.titleText}</h1>}
-        {props.type === 'summary' && <div>{props.etaText}</div>}
+        {props.type === 'summary' && <CarETA />}
 
         {/* Trip Details for View 1 #summary Only */}
         <div class="Trip-details-container" id={`${props.type}-details`}>
@@ -95,7 +112,9 @@ function TripSections(props) {
 
       <div className="Container-Row2">
         {props.type !== 'summary' && <p className="subtitle">{props.subtitleText}</p>}
-        {props.type !== 'summary' && < h1 className="title">{props.titleText}</h1>}
+        {props.type === 'driver' && <h1 className="title">{props.titleText}</h1>}
+        {props.type === 'vehicle' && <h1 className="title">{props.titleText}</h1>}
+        {props.type === 'trip' && <CarETA />}
         {props.type === 'driver' && <hr />}
 
         <div className="description">
@@ -141,9 +160,21 @@ function TripSections(props) {
               displayDetail={mission.vehicle.color}
             />
           }
+
+          {
+            props.type === 'trip' &&
+            <SectionDetails
+              id="vehicle-vibe"
+              label="vibe-label"
+              displayLabel="Vehicle Vibe:"
+              detail="vibe-name"
+              displayDetail={mission.vibe.name}
+            />
+          }
+
         </div>
 
-        <button className="button">{props.buttonText}</button>
+        <button className="button" id={`${props.type}-btn`}>{props.buttonText}</button>
       </div>
     </div >
 
@@ -151,16 +182,6 @@ function TripSections(props) {
 }
 
 function App() {
-  // ETA Date & Time
-  let date = new Date(mission.trip.estimated_arrival);
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
-  hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  var strTime = hours + ':' + minutes + ' ' + ampm;
-
   return (
     <main>
       <div className="App">
@@ -181,7 +202,6 @@ function App() {
             type={'summary'}
             subtitleText={'Your Trip'}
             etaText={`Estimated arrival at ${mission.trip.dropoff_location.name}`}
-            titleText={strTime}
             buttonText='Cancel Trip'
           />
 
@@ -207,8 +227,6 @@ function App() {
             headerImg={mapImg}
             imgAltText='A photo of your destination map'
             subtitleText='Your Trip'
-            titleText={mission.trip.estimated_arrival}
-            descriptionText={mission.vibe.name}
             buttonText='Change Vehicle Vibe' />
 
           <footer className="App-footer">

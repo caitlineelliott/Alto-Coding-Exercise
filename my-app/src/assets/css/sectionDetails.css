@@ -16,14 +16,32 @@
     font-weight: bold;
 }
 
+#vehicle-vibe {
+    width: 100%;
+}
+
 .label {
     font-size: 3.8vw;
     color: rgb(119,119,119);
     border-top: 1px solid rgb(221,218,214);
     padding-top: 10px;
     margin: 0 10px;
-  }
+}
 
+/* Other details not in SectionDetails Component */
+
+.carETAtext {
+    font-size: 1.6vh;
+}
+
+#trip-btn {
+    bottom: 14vh;
+    border: none;
+    color: rgb(247, 243, 239);
+    background-color: rgb(172,130,109);
+}
+
+/* WHat does this refer to? */
 .Trip-info {
     box-sizing: border-box;
     height: 80%;
