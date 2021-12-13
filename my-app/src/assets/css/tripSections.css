@@ -12,6 +12,11 @@
     position: relative;
   }
 
+  #summary {
+      justify-content: flex-end;
+      padding: 30px;
+  }
+
 #driver {
     background-position-x: 46%;
     background-position-y: 20%;
