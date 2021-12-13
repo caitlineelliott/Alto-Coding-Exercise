@@ -1,6 +1,6 @@
 .Container-Row1,
 .Container-Row2 {
-  height: 45vh;
+  height: 50vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

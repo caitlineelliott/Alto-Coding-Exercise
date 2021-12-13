@@ -4,7 +4,6 @@
   left: 0;
   width: 100vw;
   box-sizing: border-box;
-  height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,9 +11,12 @@
 }
 
 .App-header {
-  top: 30px;
-  height: 2vh;
-  padding: 30px;
+  margin-top: 7.5vh;
+}
+
+.header-subtitle {
+  font-family: 'LinoTypeRegular';
+  font-size: 5vh;
 }
 
 .App-footer {

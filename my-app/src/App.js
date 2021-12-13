@@ -159,7 +159,7 @@ function TripSections(props) {
     <div className='container'>
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
-        {props.type === 'summary' && <div>{props.subtitleText}</div>}
+        {props.type === 'summary' && <div className="header-subtitle">{props.subtitleText}</div>}
         {props.type === 'summary' && <CarETA />}
 
         {/* Trip Details for View 1 #summary Only */}
