@@ -75,6 +75,7 @@ h2 {
   height: 45vh;
   box-sizing: border-box;
   display: flex;
+  border: 1px solid red;
 }
 
 .Container-Row2 {
@@ -213,8 +214,10 @@ h2 {
 }
 
 #vehicle {
-  background-position: center center;
-  background-repeat: no-repeat;
+   background-repeat: no-repeat;
+   background-position-x: 50%;
+   background-position-y: 65%;
+   background-size: 75%;
 }
 
 /* views 2-4 */
@@ -263,7 +266,7 @@ hr {
 }
 
 #button:hover {
-color:   rgb(247, 243, 239);
+  color:rgb(247, 243, 239);
   background-color:rgb(217,216,203);
 }
 
