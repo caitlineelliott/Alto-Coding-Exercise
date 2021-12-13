@@ -22,7 +22,6 @@ import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons
 
 // Active Nav Styling
 const handleActiveNav = (e) => {
-
   for (let i = 2; i < e.target.children.length - 1; i++) {
     let sections = e.target.children[i].firstChild.id;
     let top = e.target.children[i].getBoundingClientRect().top;
@@ -37,8 +36,6 @@ window.addEventListener('DOMContentLoaded', () => {
   let parentContainer = document.querySelector('.Container');
   parentContainer.addEventListener('scroll', handleActiveNav);
 });
-
-
 
 function TripSections(props) {
   return (

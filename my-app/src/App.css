@@ -107,6 +107,12 @@ h2 {
   z-index: 1;
 }
 
+.App-header {
+  top: 30px;
+  height: 2vh;
+  padding: 30px;
+}
+
 .App-nav {
   position: fixed;
   right: 5vw;
@@ -198,9 +204,10 @@ h2 {
   align-items: center;
 }
 
-.section-header-img {
-  background-position-x: center;
-  background-position-y: 13%;
+#driver {
+  background-position-x: 46%;
+  background-position-y: 20%;
+  background-size: 231%;
 }
 
 #vehicle {
@@ -209,7 +216,6 @@ h2 {
 }
 
 /* views 2-4 */
-
 #subtitle {
   text-transform: uppercase;
   color:rgb(172,130,109);
@@ -223,29 +229,30 @@ h2 {
   font-family: 'PxGrotesk-Light';
   margin: 20px 0;
   font-weight: lighter;
+  color: rgb(63,56,37);
 }
 
 hr {
   border-top: 1px solid rgb(221,218,214);
-  width: 47%;
+  width: 50%;
   margin-left: 0;
 }
 
 #description {
   font-family: 'PxGrotesk-Light';
-  font-size: 1.5vh;
+  font-size: 1.6vh;
 }
 
 #button {
   width: calc(100vw - 60px);
-  height: 5vh;
+  height: 6vh;
   background: transparent;
   border: 1px solid rgb(217,216,203);
   text-transform: uppercase;
   color:rgb(217,216,203);
   font-family: 'PxGrotesk-Light';
   position: absolute;
-  bottom: 45px;
+  bottom: 4vh;
 }
 
 
