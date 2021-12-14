@@ -10,7 +10,6 @@
 .Container-Row2 {
     flex-direction: column;
     position: relative;
-    height: 55h;
   }
 
   #summary {
@@ -37,13 +36,40 @@
     mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
 }
 
+
+.row1 {
+  height: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row2 {
+  height: 55%;
+  /* border: 1px solid red; */
+}
+
+.subtitle {
+  text-transform: uppercase;
+  color:rgb(172,130,109);
+  font-family: 'PxGrotesk-Regular';
+  font-size: 1.5vh;
+  letter-spacing: 0.25vw;
+  font-weight: bold;
+  position: relative;
+  top: 0;
+  flex: 0;
+}
+
 .title {
-    font-size: 10vh;
+    font-size: 4.3em;
     font-family: 'PxGrotesk-Light';
-    margin: 25px 0;
+    margin: 0;
     font-weight: lighter;
     color: rgb(63,56,37);
-  }
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
 
 .carETA {
       margin-bottom: 0;
@@ -61,18 +87,9 @@
     margin: 10px;
 }
 
-.subtitle {
-    text-transform: uppercase;
-    color:rgb(172,130,109);
-    font-family: 'PxGrotesk-Regular';
-    font-size: 1.5vh;
-    letter-spacing: 0.25vw;
-    font-weight: bold;
-}
-
   .description {
     font-family: 'PxGrotesk-Light';
-    font-size: 1.6vh;
+    font-size: 0.8em;
     color: rgb(30,29,30);
     position: relative;
     padding-top: 10px;

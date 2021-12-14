@@ -22,11 +22,7 @@
 }
 
 /* Section Rows*/
-.row1,
-.row2 {
-  height: calc((45vh / 2) - 30px);
-  box-sizing: border-box;
-}
+
 
 #trip-containerRow2 {
   height: 55vh;
@@ -66,7 +62,8 @@ p {
 }
 
 body {
-  background-color: rgb(247, 243, 239)
+  background-color: rgb(247, 243, 239);
+  font-size: 16px;
 }
 
 h2 {
