@@ -2,14 +2,12 @@
 @import '../src/assets/css/headerFooter.css';
 @import '../src/assets/css/nav.css';
 @import '../src/assets/css/sectionDetails.css';
+@import '../src/assets/css/sectionRows.css';
 @import '../src/assets/css/tripSections.css';
 
 .edit-icon {
   position: absolute;
 }
-
-/* Section Rows*/
-
 
 #trip-containerRow2 {
   height: 55vh;
@@ -42,81 +40,6 @@
   width   : 50%;  /* or 100px */
   border-bottom:1px solid var(--border-color);
 }
-
-/* Resets */
-p {
-  margin: 0;
-}
-
-
-h2 {
-  font-family: 'LinoTypeRegular';
-  font-size: 8vw;
-}
-
-.eta {
-  margin: 16.6% 0 20px 0;
-}
-
-.eta-big {
-  font-family: 'PxGrotesk-Light';
-  font-size: 18vw;
-  margin: 0;
-}
-
-.eta-description {
-  font-size: 3.5vw;
-  font-family: 'PxGrotesk-Light';
-  margin-top: 0;
-}
-
-#amPm {
-  font-size: 8vw;
-}
-
-.trip-info {
-  width: 100%;
-  padding: 30px;
-}
-
-
-
-
-
-
-.trip-address {
-  width: 85vw;
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding-bottom: 20px;
-}
-
-.trip-address-bold {
-  font-weight: bold;
-}
-
-.Trip-actions {
-  width: 100vw;
-  height: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header-subtitle {
-  font-family: 'LinoTypeRegular';
-  font-size: 4vh;
-  margin-top: 15vh;
-}
-
-/* Detail Styling */
-#vehicle-details > * {
-  width: 50%;
-}
-
 
 /* Desktop View */
 @media only screen and (min-width: 1000px) {

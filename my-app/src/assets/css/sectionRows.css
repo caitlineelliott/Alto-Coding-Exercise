@@ -1,0 +1,121 @@
+/*
+    Styles for SectionRows in App.js. The second row (.ContainerRow2) of each TripSections component
+    is divided into two rows (.row1 & row2). This file includes styles for both of these rows as well
+    as the immediate children of these rows.
+
+    This file also includes styling for the car ETA time stamp & subtitle. This element appears in both .row1
+    and .row2 of different views of the app.
+*/
+
+/* Car ETA timestamp styles start */
+.carETA {
+    margin-bottom: 0;
+    line-height: 6vh;
+}
+
+.etaTime {
+    letter-spacing: -1.5vw;
+}
+
+.eta {
+    margin: 16.6% 0 20px 0;
+}
+
+.ampm {
+    text-transform:uppercase;
+    font-size: 4.5vh;
+    font-weight: bold;
+    margin: 10px;
+}
+/* Car ETA timestamp styles end */
+
+/* .row1 styles start */
+.row1 {
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* elements within .row1 */
+
+/* "Your Trip" text from view 1 (#summary) */
+.header-subtitle {
+    font-family: 'LinoTypeRegular';
+    font-size: 4vh;
+    margin-top: 15vh;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    color:var(--subtitle-color);
+    font-family: 'PxGrotesk-Regular';
+    font-size: 0.8em;
+    letter-spacing: 0.15em;
+    font-weight: bold;
+    position: relative;
+    top: 0;
+    flex: 0;
+}
+
+.title {
+    font-size: 4.3em;
+    letter-spacing: -0.06em;
+    font-family: 'PxGrotesk-Light';
+    margin: 0;
+    font-weight: lighter;
+    color: var(--title-color);
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+/* .row1 styles end */
+
+/* .row2 styles start */
+.row2 {
+    height: 55%;
+}
+
+/* elements within .row2 */
+.description {
+    font-family: 'PxGrotesk-Light';
+    font-size: 0.8em;
+    color: var(--body-text-color);
+    position: relative;
+    padding-top: 10px;
+}
+
+.description:before {
+    content: '';
+    position: absolute;
+    left    : 0;
+    top  : 0;
+    height  : 1px;
+    width   : 50%;  /* or 100px */
+    border-top:1px solid var(--border-color);
+}
+
+.Trip-details-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: calc(100vw - (8.9vw*2));
+    height: 6vh;
+    background: transparent;
+    border: 1px solid var(--border-color);
+    text-transform: uppercase;
+    color:var(--border-color);
+    font-family: 'PxGrotesk-Light';
+    position: absolute;
+    bottom: 4vh;
+}
+
+button:hover {
+    color: var(--background-color);
+    background-color: var(--border-color);
+}
+/* .row2 styles end */
