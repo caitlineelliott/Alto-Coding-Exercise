@@ -61,19 +61,20 @@
 }
 
 .title {
-    font-size: 4.3em;
-    font-family: 'PxGrotesk-Light';
-    margin: 0;
-    font-weight: lighter;
-    color: rgb(63,56,37);
-    flex: 1;
-    display: flex;
-    align-items: center;
+  font-size: 4.3em;
+  letter-spacing: -0.06em;
+  font-family: 'PxGrotesk-Light';
+  margin: 0;
+  font-weight: lighter;
+  color: rgb(63,56,37);
+  flex: 1;
+  display: flex;
+  align-items: center;
 }
 
 .carETA {
-      margin-bottom: 0;
-      line-height: 6vh;
+  margin-bottom: 0;
+  line-height: 6vh;
 }
 
 .etaTime {
@@ -81,44 +82,44 @@
 }
 
 .ampm {
-    text-transform:uppercase;
-    font-size: 4.5vh;
-    font-weight: bold;
-    margin: 10px;
+  text-transform:uppercase;
+  font-size: 4.5vh;
+  font-weight: bold;
+  margin: 10px;
 }
 
-  .description {
-    font-family: 'PxGrotesk-Light';
-    font-size: 0.8em;
-    color: rgb(30,29,30);
-    position: relative;
-    padding-top: 10px;
-  }
+.description {
+  font-family: 'PxGrotesk-Light';
+  font-size: 0.8em;
+  color: rgb(30,29,30);
+  position: relative;
+  padding-top: 10px;
+}
 
-  .description:before {
-    content: '';
-    position: absolute;
-    left    : 0;
-    top  : 0;
-    height  : 1px;
-    width   : 50%;  /* or 100px */
-    border-top:1px solid rgb(221,218,214);
-  }
+.description:before {
+  content: '';
+  position: absolute;
+  left    : 0;
+  top  : 0;
+  height  : 1px;
+  width   : 50%;  /* or 100px */
+  border-top:1px solid rgb(221,218,214);
+}
 
-  .button {
-    width: calc(100vw - 60px);
-    height: 6vh;
-    background: transparent;
-    border: 1px solid rgb(217,216,203);
-    text-transform: uppercase;
-    color:rgb(217,216,203);
-    font-family: 'PxGrotesk-Light';
-    position: absolute;
-    bottom: 4vh;
-  }
+.button {
+  width: calc(100vw - 60px);
+  height: 6vh;
+  background: transparent;
+  border: 1px solid rgb(217,216,203);
+  text-transform: uppercase;
+  color:rgb(217,216,203);
+  font-family: 'PxGrotesk-Light';
+  position: absolute;
+  bottom: 4vh;
+}
 
-  button:hover {
-    color:rgb(247, 243, 239);
-    background-color:rgb(217,216,203);
-  }
+button:hover {
+  color:rgb(247, 243, 239);
+  background-color:rgb(217,216,203);
+}
   
