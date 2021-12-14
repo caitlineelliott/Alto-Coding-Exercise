@@ -1,0 +1,29 @@
+:root {
+    --background-color: rgb(247,243,239);
+    --title-color: rgb(63,56,37);
+    --subtitle-color: rgb(172,130,109);
+    --body-text-color: rgb(30,29,30);
+    --border-color: rgb(221,218,214);
+    --black: rgb(0,0,0);
+    --dark-gray: rgb(119,119,119);
+}
+
+body {
+    background-color: var(--background-color);
+    font-size: 16px;
+}
+
+@font-face {
+    font-family: 'LinoTypeRegular';
+    src: url(../fonts/Linotype\ -\ OptimaLTStd.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'PxGrotesk-Light';
+    src: url(../fonts/PxGrotesk-Light.otf) format('opentype');
+}
+
+@font-face {
+    font-family: 'PxGrotesk-Regular';
+    src: url(../fonts/PxGrotesk-Regular.otf) format('opentype');
+}

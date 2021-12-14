@@ -24,8 +24,8 @@
     bottom: 0vh;
     height: 10vh;
     display: flex;
-    border-top: 1px solid rgb(221,218,214);
-    background-color: rgb(247, 243, 239);
+    border-top: 1px solid var(--border-color);
+    background-color: var(--background-color);
     font-family: 'PxGrotesk-Light';
     font-size: 3.5vw;
 }

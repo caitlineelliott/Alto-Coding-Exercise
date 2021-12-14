@@ -50,7 +50,7 @@
 
 .subtitle {
   text-transform: uppercase;
-  color:rgb(172,130,109);
+  color:var(--subtitle-color);
   font-family: 'PxGrotesk-Regular';
   font-size: 0.8em;
   letter-spacing: 0.15em;
@@ -66,7 +66,7 @@
   font-family: 'PxGrotesk-Light';
   margin: 0;
   font-weight: lighter;
-  color: rgb(63,56,37);
+  color: var(--title-color);
   flex: 1;
   display: flex;
   align-items: center;
@@ -91,7 +91,7 @@
 .description {
   font-family: 'PxGrotesk-Light';
   font-size: 0.8em;
-  color: rgb(30,29,30);
+  color: var(--body-text-color);
   position: relative;
   padding-top: 10px;
 }
@@ -103,23 +103,23 @@
   top  : 0;
   height  : 1px;
   width   : 50%;  /* or 100px */
-  border-top:1px solid rgb(221,218,214);
+  border-top:1px solid var(--border-color);
 }
 
 .button {
   width: calc(100vw - (8.9vw*2));
   height: 6vh;
   background: transparent;
-  border: 1px solid rgb(217,216,203);
+  border: 1px solid var(--border-color);
   text-transform: uppercase;
-  color:rgb(217,216,203);
+  color:var(--border-color);
   font-family: 'PxGrotesk-Light';
   position: absolute;
   bottom: 4vh;
 }
 
 button:hover {
-  color:rgb(247, 243, 239);
-  background-color:rgb(217,216,203);
+  color: var(--background-color);
+  background-color: var(--border-color);
 }
   
