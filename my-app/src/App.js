@@ -44,13 +44,13 @@ function CarETA(props) {
   var minutes = date.getMinutes();
   var ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12;
-  hours = hours ? hours : 12; // the hour '0' should be '12'
+  hours = hours ? hours : 12;
   minutes = minutes < 10 ? '0' + minutes : minutes;
   var carETA = hours + ':' + minutes + ampm;
 
   return (
     <div className="eta">
-      <h1 class="title carETA">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></h1>
+      <h1 class="title carETA"><span className="etaTime">{carETA.slice(0, -2)}</span><span class="ampm">{carETA.slice(-2)}</span></h1>
       <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
     </div>
   )

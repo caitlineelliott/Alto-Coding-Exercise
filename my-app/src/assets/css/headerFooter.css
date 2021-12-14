@@ -16,7 +16,8 @@
 
 .header-subtitle {
   font-family: 'LinoTypeRegular';
-  font-size: 5vh;
+  font-size: 4vh;
+  margin-top: 15vh;
 }
 
 .App-footer {

@@ -1,15 +1,16 @@
 .Container-Row1,
 .Container-Row2 {
-  height: 50vh;
+  height: 45vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  padding: 8.9vw;
 }
 
 .Container-Row2 {
     flex-direction: column;
-    padding: 30px;
     position: relative;
+    height: 55h;
   }
 
   #summary {
@@ -47,6 +48,10 @@
 .carETA {
       margin-bottom: 0;
       line-height: 6vh;
+}
+
+.etaTime {
+  letter-spacing: -1.5vw;
 }
 
 .ampm {
