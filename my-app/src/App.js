@@ -137,7 +137,7 @@ function SectionRows(props) {
 
 function TripSections(props) {
   return (
-    <div className='container'>
+    <div className='container' id={`${props.type}-container`}>
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
         {props.type === 'summary' && <div className="header-subtitle">{props.subtitleText}</div>}
