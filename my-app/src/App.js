@@ -1,24 +1,5 @@
-import './App.css';
 import React from 'react';
-// import { useEffect } from 'react';
-
-// Trip Data
-import mission from '../src/assets/data/mission.json'
-
-// Images
-import logo from '../src/assets/images/Alto_logo.png';
-import userProfileIcon from '../src/assets/images/Profile_icon.png';
-import vibesIcon from '../src/assets/images/Vibes_icon.png';
-import driverImg from '../src/assets/images/Driver_photo.png';
-import vehicleImg from '../src/assets/images/Vehicle_photo.png';
-import mapImg from '../src/assets/images/Map_overview.png';
-import editIcon from '../src/assets/images/Edit_icon.png';
-import phoneFrame from '../src/assets/images/Phone_frame.png';
-
-// FontAwesome Icons
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircle } from '@fortawesome/free-solid-svg-icons';
-import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
+import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg } from '../src/assets/js/imports';
 
 // Active Nav Styling
 const handleActiveNav = (e) => {
