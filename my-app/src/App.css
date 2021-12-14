@@ -78,11 +78,6 @@ h2 {
   padding: 30px;
 }
 
-.Container {
-  height: 100vh;
-  box-sizing: border-box;
-}
-
 .App-nav {
   position: fixed;
   right: 5vw;
@@ -124,20 +119,7 @@ h2 {
   align-items: center;
 }
 
-/* CSS Snap Points Test */
-.Container {
-  overflow-y: auto;
-  scroll-snap-coordinate: 0 0;
-  scroll-snap-type: y mandatory;
-}
 
-.container {
-  scroll-snap-align: start;
-}
-
-.phone-frame {
-  background-image: none;
-}
 
 /* Detail Styling */
 #vehicle-details > * {
