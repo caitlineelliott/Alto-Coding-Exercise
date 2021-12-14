@@ -1,3 +1,8 @@
+/* Styles for TripSections in App.js. Each TripSectoin is divide into two rows:
+   (.Container-Row1 & .ContainerRow2). This file includes styles
+   for both of these rows as well as the immediate children of these rows */
+
+/* TripSections styles - all */
 .Container-Row1,
 .Container-Row2 {
   height: 45vh;
@@ -10,116 +15,33 @@
 .Container-Row2 {
     flex-direction: column;
     position: relative;
-  }
+}
 
-  #summary {
-      justify-content: flex-end;
-      padding: 30px;
-  }
+/* "Your Trip" TripSections Styles */
+#summary {
+  justify-content: flex-end;
+  padding: 30px;
+}
 
+/* "Your Driver" TripSections Styles */
 #driver {
     background-position-x: 46%;
     background-position-y: 15%;
     background-size: 225%;
     }
 
+/* "Your Vehicle" TripSections Styles */
 #vehicle {
-    background-repeat: no-repeat;
-    background-position-x: 50%;
-    background-position-y: 65%;
-    background-size: 75%;
-    }
+  background-repeat: no-repeat;
+  background-position-x: 50%;
+  background-position-y: 65%;
+  background-size: 75%;
+}
 
+/* "Your Trip" - Final Section TripSection Styles */
 #trip {
-    background-color: lightblue;
-    -webkit-mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
-    mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
+  background-color: lightblue;
+  -webkit-mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
+  mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
 }
 
-
-.row1 {
-  height: 45%;
-  display: flex;
-  flex-direction: column;
-}
-
-.row2 {
-  height: 55%;
-  /* border: 1px solid red; */
-}
-
-.subtitle {
-  text-transform: uppercase;
-  color:var(--subtitle-color);
-  font-family: 'PxGrotesk-Regular';
-  font-size: 0.8em;
-  letter-spacing: 0.15em;
-  font-weight: bold;
-  position: relative;
-  top: 0;
-  flex: 0;
-}
-
-.title {
-  font-size: 4.3em;
-  letter-spacing: -0.06em;
-  font-family: 'PxGrotesk-Light';
-  margin: 0;
-  font-weight: lighter;
-  color: var(--title-color);
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-
-.carETA {
-  margin-bottom: 0;
-  line-height: 6vh;
-}
-
-.etaTime {
-  letter-spacing: -1.5vw;
-}
-
-.ampm {
-  text-transform:uppercase;
-  font-size: 4.5vh;
-  font-weight: bold;
-  margin: 10px;
-}
-
-.description {
-  font-family: 'PxGrotesk-Light';
-  font-size: 0.8em;
-  color: var(--body-text-color);
-  position: relative;
-  padding-top: 10px;
-}
-
-.description:before {
-  content: '';
-  position: absolute;
-  left    : 0;
-  top  : 0;
-  height  : 1px;
-  width   : 50%;  /* or 100px */
-  border-top:1px solid var(--border-color);
-}
-
-.button {
-  width: calc(100vw - (8.9vw*2));
-  height: 6vh;
-  background: transparent;
-  border: 1px solid var(--border-color);
-  text-transform: uppercase;
-  color:var(--border-color);
-  font-family: 'PxGrotesk-Light';
-  position: absolute;
-  bottom: 4vh;
-}
-
-button:hover {
-  color: var(--background-color);
-  background-color: var(--border-color);
-}
-  
