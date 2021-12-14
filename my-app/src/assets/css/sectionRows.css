@@ -1,5 +1,5 @@
 /*
-    Styles for SectionRows in App.js. The second row (.ContainerRow2) of each TripSections component
+    Styles for SectionRows in App.js. In each TripSections component, the second row (.ContainerRow2)
     is divided into two rows (.row1 & row2). This file includes styles for both of these rows as well
     as the immediate children of these rows.
 
