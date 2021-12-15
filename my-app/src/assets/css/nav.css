@@ -14,6 +14,6 @@
 }
 
 /* Sets view 1's nav indicator to active by default */
-#summary-view-nav {
+#your-trip-view-nav {
     color: var(--title-color);
 }

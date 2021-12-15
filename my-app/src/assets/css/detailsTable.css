@@ -28,7 +28,7 @@
   font-size: 0.9em;
 }
 
-/* Styles for .details-table in #summary-view */
+/* Styles for .details-table in #your-trip-view */
 #fare-table,
 #passengers-table {
   margin-right: 20px;
@@ -42,7 +42,7 @@
 }
 
 /* Creates two column layout */
-#vehicle-details > * {
+#your-vehicle-details > * {
   width: 50%;
 }
 
@@ -53,39 +53,6 @@
 /* Styles for .details-table in #trip-container */
 
 /* Creates one column layout */
-#trip-details > * {
+#vehicle-vibe-table {
   width: 100%;
 }
-
-
-
-
-
-
-/* */
-
-
-
-
-
-/* Other details not in SectionDetails Component */
-
-#trip-btn {
-    bottom: 12vh;
-    border: none;
-    color: var(--background-color);
-    background-color: var(--subtitle-color);
-}
-
-/* WHat does this refer to? */
-.Trip-info {
-    box-sizing: border-box;
-    height: 80%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 30px;
-}
-
-  
-  

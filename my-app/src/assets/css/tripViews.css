@@ -21,37 +21,37 @@
   position: relative;
 }
 
-#driver-view-row2,
-#vehicle-view-row2,
-#trip-view-row2 {
+#your-driver-view-row2,
+#your-vehicle-view-row2,
+#your-trip-summary-view-row2 {
   padding: 8.5vw 8.25vw;
 }
 
-#trip-view-row2 {
+#your-trip-summary-view-row2 {
   height: 54vh;
 }
 
 /* "Your Trip" TripViews Styles */
-#summary {
+#your-trip {
   display: flex;
   padding-bottom: 2vh;
   height: 50vh;
 }
 
-#summary > *,
+#your-trip > *,
 .view-row1 {
   box-sizing: border-box;
 }
 
-#summary-view-row2 {
+#your-trip-view-row2 {
   height: 42vh;
 }
 
-#trip-containerRow2 {
+#your-trip-summary-containerRow2 {
   height: 55vh;
 }
 
-/* flex properties for #summary children */
+/* flex properties for #your-trip children */
 .header-subtitle {
   flex: 1.9;
   display: flex;
@@ -109,14 +109,14 @@
 }
 
 /* "Your Driver" TripViews Styles */
-#driver {
+#your-driver {
     background-position-x: 46%;
     background-position-y: 15%;
     background-size: 225%;
 }
 
 /* "Your Vehicle" TripViews Styles */
-#vehicle {
+#your-vehicle {
   background-repeat: no-repeat;
   background-position-x: 51%;
   background-position-y: 72.5%;
@@ -124,14 +124,14 @@
 }
 
 /* "Your Trip" - Final Section TripSection Styles */
-#trip {
+#your-trip-summary {
   background-color: lightblue;
   -webkit-mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
   mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
 }
 
 /* Position attribute set on #trip-view so that the .map-icon exists in position relative to it */
-#trip-view {
+#your-trip-summary-view {
   position: relative;
 }
 
