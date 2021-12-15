@@ -1,4 +1,4 @@
-import '../../../src/App.css';
+import '../css/App.css';
 
 // Trip Data
 import mission from '../data/mission.json'
