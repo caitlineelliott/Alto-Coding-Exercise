@@ -1,9 +1,9 @@
 /*
-    Styles for SectionDetails in App.js. These details are visible to the end user in 1-3 column div groups
-    and provide detailed information about the trip such as fare, vehicle, etc.
+    Styles for DetailsTable component in App.js. These details are visible to the end user in 1-3 column div
+    groups and provide detailed information about the trip such as fare, vehicle, etc.
 */
 
-/* Styles for all .Trip-detials */
+/* Styles for all .details-table elements */
 .details-table {
   width: 33%;
   text-align: center;
@@ -15,35 +15,26 @@
   border-top: 0.25px solid var(--border-color);
 }
 
-.label {
+.details-label {
   font-size: 0.8em;
-  color: var(--dark-gray);
-  padding-top: 8px;
-  padding-bottom: 3px;
+  padding: 8px 0 3px 0;
   letter-spacing: 0em;
   font-weight: normal;
-}
-
-.trip-num {
-  font-size: 0.9em;
-}
-
-/* Styles for .details-table in #summary-container */
-#fare-table {
-  margin-right: 20px;
-}
-
-#passengers-table {
-  margin-right: 20px;
-}
-
-/* Styles for .details-table in #vehcile-container */
-#vehicle-color-label,
-#make-model-label {
   font-family: 'PxGrotesk-Light';
   color: var(--title-color);
 }
 
+.details-content {
+  font-size: 0.9em;
+}
+
+/* Styles for .details-table in #summary-view */
+#fare-table,
+#passengers-table {
+  margin-right: 20px;
+}
+
+/* Styles for .details-table in #vehcile-view */
 #color-type,
 #make-model-type {
   font-size: 0.8em;

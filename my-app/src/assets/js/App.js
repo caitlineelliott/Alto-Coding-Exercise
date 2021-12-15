@@ -21,8 +21,8 @@ function CarETA(props) {
 function DetailsTable(props) {
   return (
     <div class="details-table" id={`${props.id}-table`}>
-      <p id={props.label} class="label">{props.displayLabel}</p>
-      <p id={props.detail} class="trip-num">{props.displayDetail}</p>
+      <p id={props.label} class="details-label">{props.displayLabel}</p>
+      <p id={props.detail} class="details-content">{props.displayDetail}</p>
     </div>
   )
 }
