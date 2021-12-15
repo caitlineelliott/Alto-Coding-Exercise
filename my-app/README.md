@@ -2,9 +2,9 @@
 This is a mockup of four different views in Alto's Rider App.
 
 ## How to Deoploy
--Download the 'my-app' directory on your local machine
--In the project directory, you can run `npm run start` to initialize the app in development mode
--Running `npm run build` builds the app for production in the build folder
+- Download the 'my-app' directory on your local machine
+- In the project directory, you can run `npm run start` to initialize the app in development mode
+- Running `npm run build` builds the app for production in the build folder
 
 The app is hosted at localhost:3031
 
@@ -15,22 +15,22 @@ The app is hosted at localhost:3031
     - Vehicle ETA
     - Pickup location/dropoff location
     - Trip notes from the user
-    - `Call to Action Button:` Cancel Trip
+    - **Call to Action Button:** Cancel Trip
 
 2. Your Driver: shows the Alto driver info for the user's trip, including
     - Driver name & bio
-    - `Call to Action Button:` Contact Driver
+    - **Call to Action Button:** Contact Driver
 
 3. Your Vehicle: shows the Alto vehicle info for the user's trip, including
     - Vehicle name
     - Vehicle make, model, and color
-    - `Call to Action Button:` Identify Vehicle
+    - **Call to Action Button:** Identify Vehicle
 
 4. Your Trip: The view for the user while the trip is occuring, which shows:
     - Trip ETA
     - Destination
     - Vehicle Vibe
-    - `Call to Action Button:` Change Vehicle Vibe
+    - **Call to Action Button:** Change Vehicle Vibe
 
 # Create React App
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
