@@ -43,6 +43,10 @@
   width: 2.75vw;
 }
 
+#info-icon:hover {
+  cursor: pointer;
+}
+
 /* Styles for .details-table in #vehcile-view */
 #color-type,
 #make-model-type {

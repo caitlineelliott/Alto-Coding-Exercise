@@ -112,6 +112,7 @@
 button:hover {
     color: var(--background-color);
     background-color: var(--border-color);
+    cursor: pointer;
 }
 
 #your-trip-summary-btn {

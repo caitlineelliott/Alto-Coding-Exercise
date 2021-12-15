@@ -42,3 +42,7 @@ and trip notes */
   margin-left: 20px;
   width: 3vw;
 }
+
+.edit-icon:hover {
+  cursor: pointer;
+}
