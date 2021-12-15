@@ -1,6 +1,6 @@
 /* Header & Footer Styles */
-.App-header,
-.App-footer {
+.app-header,
+.app-footer {
   position: fixed;
   left: 0;
   width: 100vw;
@@ -12,23 +12,23 @@
 }
 
 /* Header Only Styles */
-.App-header {
+.app-header {
   height: 9.2vh;
   display: flex;
   align-items: flex-end;
 }
 
 /* Footer Only Styles */
-.App-footer {
+.app-footer {
   bottom: 0vh;
   height: 8vh;
   display: flex;
   border-top: 1px solid var(--border-color);
   background-color: var(--background-color);
   font-family: 'PxGrotesk-Light';
-  font-size: 3.5vw;
 }
 
+/* Footer Icons */
 .user-icon,
 .vibes-icon {
   width: 20vh;
@@ -45,6 +45,7 @@
   width: 8vw;
 }
 
+/* Footer Address Styles */
 .trip-address {
   width: 85vw;
   height: 10vh;
@@ -57,14 +58,10 @@
   font-size: 0.9em;
 }
 
-.trip-address-bold {
+#address-row1 {
   font-weight: bold;
   letter-spacing: 0.1em;
   font-size: 1.1em;
-}
-
-#footer-row2 {
-  font-size: 1em;
 }
 
 #footer-eta {

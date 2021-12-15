@@ -171,7 +171,7 @@ function App() {
   return (
     <main>
       <div className="App">
-        <header className="App-header"> <img src={logo} alt="Alto logo" /> </header>
+        <header className="app-header"> <img src={logo} alt="Alto logo" /> </header>
 
         <nav className="App-nav">
           <FontAwesomeIcon icon={faCircle} id='summary-view-nav' />
@@ -188,11 +188,12 @@ function App() {
           <TripViews type={'trip'} headerImg={mapImg} imgAltText='A photo of your destination map' />
         </div>
 
-        <footer className="App-footer">
+        <footer className="app-footer">
           <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>
           <div className="trip-address">
-            <div id="footer-row1" className="trip-address-bold"> {shortLocation}  </div>
-            <div id="footer-row2">ETA: <CarETA type="footer-eta" /></div>
+            <div id="address-row1">{shortLocation}</div>
+            <div id="address-row2">
+              ETA: <CarETA type="footer-eta" /></div>
           </div>
           <div className="vibes-icon"><img src={vibesIcon} alt="Change Vibes Icon" /></div>
         </footer>
