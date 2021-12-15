@@ -45,6 +45,10 @@
   height: 42vh;
 }
 
+#trip-containerRow2 {
+  height: 55vh;
+}
+
 /* flex properties for #summary children */
 .header-subtitle {
   flex: 1.9;

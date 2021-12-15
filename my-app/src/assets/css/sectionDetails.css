@@ -80,7 +80,7 @@
 /* Other details not in SectionDetails Component */
 
 #trip-btn {
-    bottom: 14vh;
+    bottom: 12vh;
     border: none;
     color: var(--background-color);
     background-color: var(--subtitle-color);

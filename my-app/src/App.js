@@ -30,7 +30,7 @@ function CarETA(props) {
   var carETA = hours + ':' + minutes + ampm;
 
   return (
-    <div className="eta">
+    <div className="eta" id={props.type}>
       {/* <div className="etaTime">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
       <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div> */}
 
@@ -56,8 +56,9 @@ function SectionRows(props) {
       {props.type !== 'summary' &&
         <div className="row1">
           <p className="subtitle">{props.subtitleText}</p>
-          <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>
-          {props.type === 'trip' && <CarETA />}
+          {props.type === 'driver' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
+          {props.type === 'vehicle' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
+          {props.type === 'trip' && <CarETA type="trip-eta" />}
         </div>
       }
 
@@ -149,7 +150,7 @@ function TripSections(props) {
       <div className="Container-Row1 section-header-img" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
         {props.type === 'summary' && <div className="header-subtitle">{props.subtitleText}</div>}
-        {props.type === 'summary' && <CarETA />}
+        {props.type === 'summary' && <CarETA type='summary-etaƒ' />}
 
         {/* Trip Details for View 1 #summary Only */}
         <div class="Trip-details-container" id={`${props.type}-details`}>

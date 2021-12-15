@@ -5,9 +5,7 @@
 @import '../src/assets/css/sectionRows.css';
 @import '../src/assets/css/tripSections.css';
 
-#trip-containerRow2 {
-  height: 55vh;
-}
+
 
 .dropoffPickup {
   padding-top: calc(10.7vw - 8vw);

@@ -9,6 +9,7 @@
     height: 47%;
     display: flex;
     flex-direction: column;
+    /* border: 1px solid blue; */
 }
 
 /* elements within .row1 */
@@ -22,6 +23,7 @@
     position: relative;
     top: 0;
     flex: 0;
+    /* border: 1px solid red; */
 }
 
 .title {
@@ -35,6 +37,7 @@
     flex: 1;
     display: flex;
     align-items: center;
+    /* border: 1px solid red; */
 }
 
 #vehicle-title {
@@ -42,11 +45,30 @@
     letter-spacing: -0.075em;
 }
 
+#trip-eta {
+    flex: 1;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-left: -2px;
+    /* border: 1px solid red; */
+}
+
 /* .row1 styles end */
 
 /* .row2 styles start */
 .row2 {
     height: 53%;
+    /* border: 1px solid blue; */
+}
+
+#trip-containerRow2 > .row1 {
+   height: 44%;
+   /* border: 1px solid red; */
+}
+
+#trip-row2 {
+    /* border: 1px solid red; */
+    height: 30%;
 }
 
 /* elements within .row2 */
