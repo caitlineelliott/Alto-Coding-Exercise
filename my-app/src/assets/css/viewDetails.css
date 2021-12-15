@@ -43,12 +43,14 @@
     letter-spacing: -0.075em;
 }
 
-/* formatting for title in the #trip section only */
+/* formatting for title in the Your Trip Summary section only */
 #trip-eta {
-    flex: 1;
     justify-content: center;
-    margin-bottom: 20px;
     margin-left: -2px;
+}
+
+#your-trip-summary-eta {
+    justify-content: center;
 }
 /* .row2A styles end */
 
@@ -110,5 +112,19 @@
 button:hover {
     color: var(--background-color);
     background-color: var(--border-color);
+}
+
+#your-trip-summary-btn {
+    bottom: 12vh;
+    background-color: var(--subtitle-color);
+    border: none;
+    color: var(--background-color);
+}
+
+#your-trip-summary-btn:hover {
+    background-color: var(--background-color);
+    border: 1px solid var(--subtitle-color);
+    color: var(--subtitle-color);
+    cursor: pointer;
 }
 /* .row2B styles end */

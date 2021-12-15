@@ -38,17 +38,8 @@
   height: 50vh;
 }
 
-#your-trip > *,
-.view-row1 {
-  box-sizing: border-box;
-}
-
 #your-trip-view-row2 {
   height: 42vh;
-}
-
-#your-trip-summary-containerRow2 {
-  height: 55vh;
 }
 
 /* flex properties for #your-trip children */
@@ -67,7 +58,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .etaTime {
@@ -99,7 +90,6 @@
   flex: 0.9;
   flex-direction: row;
   margin: 0 -3px;
-  /* margin-top: 10px; */
   align-items: flex-end;
 }
 

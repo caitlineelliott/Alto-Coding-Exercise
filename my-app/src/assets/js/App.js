@@ -92,7 +92,7 @@ function ViewDetails(props) {
           {props.type === 'your-driver' && <h1 className='title' id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'your-vehicle' && <h1 className='title' id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'your-trip-summary' &&
-            <div className='eta'>
+            <div className='eta' id='your-trip-summary-eta'>
               <CarETA type='trip-eta' />
               <div className='carETAtext'>{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
             </div>
@@ -114,7 +114,7 @@ function ViewDetails(props) {
               <DetailsTable id='vehicle-color' label='vehicle-color-label' displayLabel='Color' detail='color-type' displayDetail={mission.vehicle.color} />}
 
             {props.type === 'your-trip-summary' &&
-              <DetailsTable id='vehicle-vibe' label='vibe-label' displayLabel='Vehicle Vibe:' detail='vibe-name' displayDetail={mission.vibe.name} />}
+              <DetailsTable id='vehicle-vibe' label='vibe-label' displayLabel='Current Vibe:' detail='vibe-name' displayDetail={mission.vibe.name} />}
           </div>
         </div>
       }
