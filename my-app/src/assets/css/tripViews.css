@@ -1,11 +1,10 @@
 /* Styles for TripViews in App.js. Each TripView is divide into two rows:
-   (.view-row1 & .ContainerRow2). This file includes styles
+   (.view-row1 & .view-row2). This file includes styles
    for both of these rows as well as the immediate children of these rows */
 
 /* TripViews styles - all */
 .view-row1,
 .view-row2 {
-  /* height: 45vh; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -38,7 +37,6 @@
 #summary > *,
 .view-row1 {
   box-sizing: border-box;
-  /* border: 1px solid red; */
 }
 
 #summary-view-row2 {
@@ -65,7 +63,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  margin-bottom: 5px;
+  margin-bottom: 30px;
 }
 
 .etaTime {

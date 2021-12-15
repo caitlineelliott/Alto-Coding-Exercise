@@ -1,5 +1,5 @@
 import React from 'react';
-import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, activeNav } from './imports';
+import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg } from './imports';
 
 // Component Defines: Display view of car ETA from trip data
 function CarETA(props) {
