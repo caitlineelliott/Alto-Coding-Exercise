@@ -1,7 +1,7 @@
 import React from 'react';
 import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon } from './imports';
 
-// Component Defines: Display view of car ETA from trip data
+// Component Defines: Display view of car ETA from trip data in mission.json
 function CarETA(props) {
   const date = new Date(mission.trip.estimated_arrival);
   let hours = date.getHours();
@@ -31,10 +31,11 @@ function DetailsTable(props) {
 function ViewDetails(props) {
 
   /*
-      I know what I've done on lines 39-49 isn't scalable, but I wanted to show that I planned for cleaning the
-      the data a little bit re: when to show the address that was provided in the json file and when to show
-      something like a terminal name. I searched for an effective API to do some of this for me, but I was unable
-      to find a good one in time.
+      I know what I've done on lines 40-51 isn't scalable, but I wanted to show that I knew that the dropoff
+      location data from the json file needed to be changed from what was provided to what is displayed on
+      the mockup without just typing the 'correct' info in the div. I'm sure you all have mechanisms in your
+      live app to convert the display of certain types of addresses, so I wanted to demonstrate I knew that
+      needed to happen even though I didn't have a dataset.
   */
 
   let airportCode = '';
@@ -43,6 +44,7 @@ function ViewDetails(props) {
   let address1 = mission.trip.dropoff_location.street_line1;
   let tripCity = mission.trip.dropoff_location.city;
 
+  /* looks for airport code in location name, if present, changes dropoff location as follows: */
   if (locationName.includes('DFW')) {
     address1 = terminalName;
     tripCity = 'Irving';
@@ -51,7 +53,8 @@ function ViewDetails(props) {
 
   return (
     <div className='view-row2' id={`${props.type}-view-row2`}>
-      {/* summary view, row 2 (not divided into A & B sections because there are 3 pieces of information) */}
+
+      {/* Row 2 of "Your Trip" */}
       {props.type === 'your-trip' &&
         <div className='dropoffPickup'>
 
@@ -77,7 +80,7 @@ function ViewDetails(props) {
           </div>
         </div>}
 
-      {/* driver, vehicle, and trip view - row 2 - A*/}
+      {/* your driver, your vehicle, and trip summary view - row 2A*/}
       {props.type !== 'your-trip' &&
         <div className='row2A'>
           <p className='subtitle'>{props.subtitleText}</p>
@@ -92,13 +95,12 @@ function ViewDetails(props) {
         </div>
       }
 
-      {/* driver, vehicle, and trip view - row2 - B*/}
+      {/* driver, vehicle, and trip view - row2B*/}
       {props.type !== 'your-trip' &&
         <div className='row2B' id={`${props.type}-row2B`}>
 
           {props.type === 'your-driver' && <div className='driver-bio'>{props.driverBio}</div>}
 
-          {/* .view-row2B's content is handled by the DetailsTable component */}
           <div className='view-details-container' id={`${props.type}-details`}>
             {props.type === 'your-vehicle' &&
               <DetailsTable id='make-model' label='make-model-label' displayLabel='Make / Model' detail='make-model-type' displayDetail={mission.vehicle.make} />}
@@ -112,7 +114,7 @@ function ViewDetails(props) {
         </div>
       }
 
-      {/* I didn't provide a faux onClick property so the app would run, but I know there should be one there in the real world*/}
+      {/* I didn't provide a faux onClick property so the app would run, but I know there should be one in the real app */}
       <button className='button' id={`${props.type}-btn`}>{props.buttonText}</button>
     </div>
   );
@@ -124,7 +126,8 @@ function TripViews(props) {
     <div className='view-container' id={`${props.type}-view`}>
       <div className='view-row1' id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
-        {/* In Summary View only, show Your Trip heading, ETA, and trip details in .view-row1 */}
+        {/* In Your Trip View only, show Your Trip heading, ETA, and trip details in .view-row1 (lines 131-149) */}
+
         {props.type === 'your-trip' && <div className='header-subtitle'>Your Trip</div>}
         {props.type === 'your-trip' &&
           <div className='eta' id={props.type}>
@@ -144,7 +147,6 @@ function TripViews(props) {
           <img id='map-icon' src={mapIcon} alt='waypoint indicator'></img>
         </div>
       }
-
 
       {/* .view-row2 is further divided into .view-row2A and .view-row2B, handled by the ViewDetails component */}
       {props.type === 'your-trip' &&
@@ -179,7 +181,9 @@ function App() {
     parentContainer.addEventListener('scroll', handleFooterText);
   });
 
-  // Lines 162-167 look for location names that have a dash and render only the part of the name before the dash
+  /* Lines 185-190 look for location names that have a dash and render only the part of the name before the dash
+  Executed so that 'DFW Int'l Airport' in the footer outputs correctly */
+
   const location = mission.trip.dropoff_location.name;
   let shortLocation = ''
 
@@ -190,6 +194,7 @@ function App() {
   return (
     <main>
       <div className='App'>
+
         <header className='app-header'> <img src={logo} alt='Alto logo' /> </header>
 
         <nav className='App-nav'>
