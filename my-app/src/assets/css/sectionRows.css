@@ -1,18 +1,18 @@
 /*
     Styles for SectionRows in App.js. In each Views 2-4 of the TripSections component, the second row
-    (.ContainerRow2) is divided into two rows (.row1 & row2). This file includes styles for both of these
+    (.ContainerRow2) is divided into two rows (.row2A & row2). This file includes styles for both of these
     rows as well as the immediate children of these rows.
 */
 
-/* .row1 styles start */
-.row1 {
+/* .row2A styles start */
+.row2A {
     height: 47%;
     display: flex;
     flex-direction: column;
     /* border: 1px solid blue; */
 }
 
-/* elements within .row1 */
+/* elements within .row2A */
 .subtitle {
     text-transform: uppercase;
     color:var(--subtitle-color);
@@ -53,26 +53,26 @@
     /* border: 1px solid red; */
 }
 
-/* .row1 styles end */
+/* .row2A styles end */
 
 /* .row2 styles start */
-.row2 {
+.row2B {
     height: 53%;
     /* border: 1px solid blue; */
 }
 
-#trip-containerRow2 > .row1 {
+#trip-containerRow2A > .row2A {
    height: 44%;
    /* border: 1px solid red; */
 }
 
-#trip-row2 {
+#trip-row2B {
     /* border: 1px solid red; */
     height: 30%;
 }
 
 /* elements within .row2 */
-.description {
+.driver-bio {
     font-family: 'PxGrotesk-Light';
     font-size: 0.8em;
     color: var(--dark-gray);
@@ -82,7 +82,7 @@
     width: 98%;
 }
 
-.description:before {
+.driver-bio:before {
     content: '';
     position: absolute;
     left    : 0;
@@ -92,7 +92,7 @@
     border-top:1px solid var(--border-color);
 }
 
-.Trip-details-container {
+.view-details-container {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;

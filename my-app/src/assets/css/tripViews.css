@@ -1,10 +1,10 @@
-/* Styles for TripSections in App.js. Each TripSectoin is divide into two rows:
-   (.Container-Row1 & .ContainerRow2). This file includes styles
+/* Styles for TripViews in App.js. Each TripView is divide into two rows:
+   (.view-row1 & .ContainerRow2). This file includes styles
    for both of these rows as well as the immediate children of these rows */
 
-/* TripSections styles - all */
-.Container-Row1,
-.Container-Row2 {
+/* TripViews styles - all */
+.view-row1,
+.view-row2 {
   /* height: 45vh; */
   box-sizing: border-box;
   display: flex;
@@ -12,23 +12,23 @@
   padding: 8vw;
 }
 
-.Container-Row1 {
+.view-row1 {
   height: 46vh;
 }
 
-.Container-Row2 {
+.view-row2 {
   height: 44vh;
   flex-direction: column;
   position: relative;
 }
 
-#driver-containerRow2,
-#vehicle-containerRow2,
-#trip-containerRow2 {
+#driver-view-row2,
+#vehicle-view-row2,
+#trip-view-row2 {
   padding: 8.5vw 8.25vw;
 }
 
-/* "Your Trip" TripSections Styles */
+/* "Your Trip" TripViews Styles */
 #summary {
   display: flex;
   padding-bottom: 2vh;
@@ -36,12 +36,12 @@
 }
 
 #summary > *,
-.Container-Row1 {
+.view-row1 {
   box-sizing: border-box;
   /* border: 1px solid red; */
 }
 
-#summary-containerRow2 {
+#summary-view-row2 {
   height: 42vh;
 }
 
@@ -106,14 +106,14 @@
   width: 3vw;
 }
 
-/* "Your Driver" TripSections Styles */
+/* "Your Driver" TripViews Styles */
 #driver {
     background-position-x: 46%;
     background-position-y: 15%;
     background-size: 225%;
 }
 
-/* "Your Vehicle" TripSections Styles */
+/* "Your Vehicle" TripViews Styles */
 #vehicle {
   background-repeat: no-repeat;
   background-position-x: 51%;

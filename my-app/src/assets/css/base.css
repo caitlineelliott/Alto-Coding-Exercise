@@ -34,7 +34,7 @@ p {
 }
 
 /* Scroll Snap Functionailty */
-.Container {
+#trip-views-container {
     height: 100vh;
     box-sizing: border-box;
     overflow-y: auto;
@@ -42,6 +42,6 @@ p {
     scroll-snap-type: y mandatory;
 }
 
-.container {
+.view-container {
     scroll-snap-align: start;
 }

@@ -4,7 +4,7 @@
 */
 
 /* Styles for all .Trip-detials */
-.Trip-details {
+.details-table {
   width: 33%;
   text-align: center;
   box-sizing: border-box;
@@ -28,16 +28,16 @@
   font-size: 0.9em;
 }
 
-/* Styles for .Trip-details in #summary-container */
-#fare {
+/* Styles for .details-table in #summary-container */
+#fare-table {
   margin-right: 20px;
 }
 
-#passengers{
+#passengers-table {
   margin-right: 20px;
 }
 
-/* Styles for .Trip-details in #vehcile-container */
+/* Styles for .details-table in #vehcile-container */
 #vehicle-color-label,
 #make-model-label {
   font-family: 'PxGrotesk-Light';
@@ -55,11 +55,11 @@
   width: 50%;
 }
 
-#make-model {
+#make-model-table {
   margin-right: 20px;
 }
 
-/* Styles for .Trip-details in #trip-container */
+/* Styles for .details-table in #trip-container */
 
 /* Creates one column layout */
 #trip-details > * {
