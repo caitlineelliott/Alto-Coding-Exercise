@@ -1,5 +1,5 @@
 # Alto Rider App Mockup
-This is a mockup of four different views in Alto's Rider App. The mockup was created for a mobile app view pased on the dimensions of an iPhone 13.
+This is a mockup of four different views in Alto's Rider App. The mockup was created for a mobile app view based on the dimensions of an iPhone 13.
 
 ## How to Deoploy
 - Download the 'Alto-Coding-Exercise' directory on your local machine
