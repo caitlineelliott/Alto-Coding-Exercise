@@ -130,6 +130,7 @@
   mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
 }
 
+/* Position attribute set on #trip-view so that the .map-icon exists in position relative to it */
 #trip-view {
   position: relative;
 }
