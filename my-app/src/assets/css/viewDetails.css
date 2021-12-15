@@ -1,7 +1,7 @@
 /*
-    Styles for SectionRows in App.js. In each Views 2-4 of the TripSections component, the second row
-    (.ContainerRow2) is divided into two rows (.row2A & row2). This file includes styles for both of these
-    rows as well as the immediate children of these rows.
+    Styles for ViewDetails components in App.js. In each TripViews 2-4 (#driver, #vehicle, #trip) of the
+    TripSections component, the second row (.view-row2) is divided into two rows (.row2A & row2). This file
+    includes styles for both of these rows as well as the immediate children of these rows.
 */
 
 /* .row2A styles start */
@@ -9,7 +9,6 @@
     height: 47%;
     display: flex;
     flex-direction: column;
-    /* border: 1px solid blue; */
 }
 
 /* elements within .row2A */
@@ -23,55 +22,44 @@
     position: relative;
     top: 0;
     flex: 0;
-    /* border: 1px solid red; */
 }
 
+/* general title formatting */
 .title {
     font-size: 5em;
     letter-spacing: -0.06em;
     font-family: 'PxGrotesk-Light';
-    margin: 0;
-    margin-left: -8px;
+    margin: 0 0 0 -8px;
     font-weight: lighter;
     color: var(--title-color);
     flex: 1;
     display: flex;
     align-items: center;
-    /* border: 1px solid red; */
 }
 
+/* formatting for title in the #vehicle section only */
 #vehicle-title {
     margin-left: 0;
     letter-spacing: -0.075em;
 }
 
+/* formatting for title in the #trip section only */
 #trip-eta {
     flex: 1;
     justify-content: center;
     margin-bottom: 20px;
     margin-left: -2px;
-    /* border: 1px solid red; */
 }
-
 /* .row2A styles end */
 
-/* .row2 styles start */
+/* .row2B styles start */
 .row2B {
     height: 53%;
-    /* border: 1px solid blue; */
-}
-
-#trip-containerRow2A > .row2A {
-   height: 44%;
-   /* border: 1px solid red; */
-}
-
-#trip-row2B {
-    /* border: 1px solid red; */
-    height: 30%;
 }
 
 /* elements within .row2 */
+
+/* #driver view */
 .driver-bio {
     font-family: 'PxGrotesk-Light';
     font-size: 0.8em;
@@ -123,4 +111,4 @@ button:hover {
     color: var(--background-color);
     background-color: var(--border-color);
 }
-/* .row2 styles end */
+/* .row2B styles end */

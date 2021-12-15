@@ -2,9 +2,8 @@
 @import '../src/assets/css/detailsTable.css';
 @import '../src/assets/css/headerFooter.css';
 @import '../src/assets/css/nav.css';
-@import '../src/assets/css/sectionRows.css';
 @import '../src/assets/css/tripViews.css';
-
+@import '../src/assets/css/viewDetails.css';
 
 .dropoffPickup {
   padding-top: calc(10.7vw - 8vw);
