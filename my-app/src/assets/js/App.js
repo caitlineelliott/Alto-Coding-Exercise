@@ -220,7 +220,7 @@ function App() {
           <div className='trip-address'>
             <div id='address-row1'>{shortLocation}</div>
             <div id='address-row2'>
-              ETA: <CarETA type='footer-eta' /></div>
+              ETA: &nbsp; <CarETA type='footer-eta' /></div>
           </div>
           <div className='vibes-icon'><img src={vibesIcon} alt='Change Vibes Icon' /></div>
         </footer>
