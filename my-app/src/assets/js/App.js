@@ -84,7 +84,7 @@ function ViewDetails(props) {
           {props.type === 'driver' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'vehicle' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'trip' &&
-            <div className="eta" id={props.type}>
+            <div className="eta">
               <CarETA type="trip-eta" />
               <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
             </div>
