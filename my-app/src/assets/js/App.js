@@ -3,10 +3,10 @@ import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, dr
 
 // Component Defines: Display view of car ETA from trip data
 function CarETA(props) {
-  let date = new Date(mission.trip.estimated_arrival);
-  var hours = date.getHours();
-  var minutes = date.getMinutes();
-  var ampm = hours >= 12 ? 'pm' : 'am';
+  const date = new Date(mission.trip.estimated_arrival);
+  let hours = date.getHours();
+  let minutes = date.getMinutes();
+  const ampm = hours >= 12 ? 'pm' : 'am';
   hours = hours % 12;
   hours = hours ? hours : 12;
   minutes = minutes < 10 ? '0' + minutes : minutes;
@@ -38,7 +38,7 @@ function ViewDetails(props) {
   */
 
   let airportCode = '';
-  let locationName = mission.trip.dropoff_location.name;
+  const locationName = mission.trip.dropoff_location.name;
   let terminalName = 'American Airlines Terminal E';
   let address1 = mission.trip.dropoff_location.street_line1;
   let tripCity = mission.trip.dropoff_location.city;

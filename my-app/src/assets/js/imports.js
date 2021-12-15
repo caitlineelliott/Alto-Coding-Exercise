@@ -36,4 +36,4 @@ export {
     faCircle,
     faCircleRegular,
     activeNav
-}
+};
