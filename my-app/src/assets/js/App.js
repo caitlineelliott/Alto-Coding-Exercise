@@ -3,7 +3,6 @@ import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, dr
 
 // Component Defines: Display view of car ETA from trip data
 function CarETA(props) {
-  // ETA Date & Time
   let date = new Date(mission.trip.estimated_arrival);
   var hours = date.getHours();
   var minutes = date.getMinutes();
@@ -32,24 +31,26 @@ function DetailsTable(props) {
 function ViewDetails(props) {
 
   /*
-      I know what I've done on lines 43-51 isn't scalable, but I wanted to show that I planned for cleaning the
+      I know what I've done on lines 39-49 isn't scalable, but I wanted to show that I planned for cleaning the
       the data a little bit re: when to show the address that was provided in the json file and when to show
-      something like a terminal name.
+      something like a terminal name. I searched for an effective API to do some of this for me, but I was unable
+      to find a good one in time.
   */
 
-  let airportCode = mission.trip.dropoff_location.name.slice(0, 3);
+  let airportCode = '';
+  let locationName = mission.trip.dropoff_location.name;
   let terminalName = 'American Airlines Terminal E';
   let address1 = mission.trip.dropoff_location.street_line1;
   let tripCity = mission.trip.dropoff_location.city;
 
-  if (mission.trip.dropoff_location.name.slice(0, 3) === 'DFW') {
+  if (locationName.includes('DFW')) {
     address1 = terminalName;
     tripCity = 'Irving';
+    airportCode = 'DFW';
   }
 
   return (
     <div className="view-row2" id={`${props.type}-view-row2`}>
-
       {/* summary view, row 2 (not divided into A & B sections because there are 3 pieces of information) */}
       {props.type === 'summary' &&
         <div className="dropoffPickup">
@@ -111,6 +112,7 @@ function ViewDetails(props) {
         </div>
       }
 
+      {/* I didn't provide a faux onClick property so the app would run, but I know there should be one there in the real world*/}
       <button className="button" id={`${props.type}-btn`}>{props.buttonText}</button>
     </div>
   )
