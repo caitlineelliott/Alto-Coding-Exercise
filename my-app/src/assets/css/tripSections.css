@@ -5,16 +5,27 @@
 /* TripSections styles - all */
 .Container-Row1,
 .Container-Row2 {
-  height: 45vh;
+  /* height: 45vh; */
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   padding: 8vw;
 }
 
+.Container-Row1 {
+  height: 46vh;
+}
+
 .Container-Row2 {
+  height: 44vh;
   flex-direction: column;
   position: relative;
+}
+
+#driver-containerRow2,
+#vehicle-containerRow2,
+#trip-containerRow2 {
+  padding: 8.5vw 8.25vw;
 }
 
 /* "Your Trip" TripSections Styles */
