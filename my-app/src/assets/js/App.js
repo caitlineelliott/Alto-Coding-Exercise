@@ -135,7 +135,7 @@ function TripViews(props) {
 
         {props.type === 'your-trip' && <div className='header-subtitle'>Your Trip</div>}
         {props.type === 'your-trip' &&
-          <div className='eta' id={props.type}>
+          <div className='eta'>
             <CarETA type='summary-eta' />
             <div className='carETAtext'>{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
           </div>
