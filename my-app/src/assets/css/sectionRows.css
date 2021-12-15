@@ -36,6 +36,12 @@
     display: flex;
     align-items: center;
 }
+
+#vehicle-title {
+    margin-left: 0;
+    letter-spacing: -0.075em;
+}
+
 /* .row1 styles end */
 
 /* .row2 styles start */
@@ -86,7 +92,8 @@
     font-weight: bold;
 }
 
-#driver-row2 > .button {
+#driver-row2 > .button,
+#vehicle-row2 > .button {
     bottom: 2vh;
 }
 

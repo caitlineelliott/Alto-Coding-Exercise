@@ -38,10 +38,25 @@
 }
 
 /* Styles for .Trip-details in #vehcile-container */
+#vehicle-color-label,
+#make-model-label {
+  font-family: 'PxGrotesk-Light';
+  color: var(--title-color);
+}
+
+#color-type,
+#make-model-type {
+  font-size: 0.8em;
+  font-family: 'PxGrotesk-light';
+}
 
 /* Creates two column layout */
 #vehicle-details > * {
   width: 50%;
+}
+
+#make-model {
+  margin-right: 20px;
 }
 
 /* Styles for .Trip-details in #trip-container */

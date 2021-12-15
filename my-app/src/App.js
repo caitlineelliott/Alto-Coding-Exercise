@@ -56,7 +56,7 @@ function SectionRows(props) {
       {props.type !== 'summary' &&
         <div className="row1">
           <p className="subtitle">{props.subtitleText}</p>
-          <h1 className="title">{props.titleText}</h1>
+          <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>
           {props.type === 'trip' && <CarETA />}
         </div>
       }
