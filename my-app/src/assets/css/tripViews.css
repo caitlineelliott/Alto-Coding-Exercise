@@ -16,7 +16,7 @@
 }
 
 .view-row2 {
-  height: 44vh;
+  height: 45vh;
   flex-direction: column;
   position: relative;
 }
@@ -25,6 +25,10 @@
 #vehicle-view-row2,
 #trip-view-row2 {
   padding: 8.5vw 8.25vw;
+}
+
+#trip-view-row2 {
+  height: 54vh;
 }
 
 /* "Your Trip" TripViews Styles */
