@@ -18,6 +18,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircle } from '@fortawesome/free-solid-svg-icons';
 import { faCircle as faCircleRegular } from '@fortawesome/free-regular-svg-icons';
 
+// Other JS files
+import activeNav from './activeNav'
+
 export {
     mission,
     logo,
@@ -29,5 +32,6 @@ export {
     editIcon,
     FontAwesomeIcon,
     faCircle,
-    faCircleRegular
+    faCircleRegular,
+    activeNav
 }
