@@ -13,16 +13,16 @@ function CarETA(props) {
   const carETA = hours + ':' + minutes + ampm;
 
   return (
-    <div className="etaTime" id={props.type}>{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
+    <div className='etaTime' id={props.type}>{carETA.slice(0, -2)}<span class='ampm'>{carETA.slice(-2)}</span></div>
   )
 }
 
 // Component Defines: Structure of table view for individual trip details
 function DetailsTable(props) {
   return (
-    <div class="details-table" id={`${props.id}-table`}>
-      <p id={props.label} class="details-label">{props.displayLabel}</p>
-      <p id={props.detail} class="details-content">{props.displayDetail}</p>
+    <div class='details-table' id={`${props.id}-table`}>
+      <p id={props.label} class='details-label'>{props.displayLabel}</p>
+      <p id={props.detail} class='details-content'>{props.displayDetail}</p>
     </div>
   )
 }
@@ -50,18 +50,18 @@ function ViewDetails(props) {
   }
 
   return (
-    <div className="view-row2" id={`${props.type}-view-row2`}>
+    <div className='view-row2' id={`${props.type}-view-row2`}>
       {/* summary view, row 2 (not divided into A & B sections because there are 3 pieces of information) */}
       {props.type === 'summary' &&
-        <div className="dropoffPickup">
+        <div className='dropoffPickup'>
 
-          <div id="pickup-location">
+          <div id='pickup-location'>
             <p>{mission.trip.pickup_location.street_line1}</p>
             <p>{mission.trip.pickup_location.street_line2}</p>
             <p>{mission.trip.pickup_location.city}, {mission.trip.pickup_location.state} {mission.trip.pickup_location.zipcode}</p>
           </div>
 
-          <div id="dropoff-location">
+          <div id='dropoff-location'>
             {/* Line 68 replaces the DFW airport name as written in mission.json to language that matches the design mockup */}
             {airportCode === 'DFW' && <p>DFW International Airport</p>}
             <p>{address1}</p>
@@ -69,24 +69,24 @@ function ViewDetails(props) {
             <p>{tripCity}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
           </div>
 
-          <div id="trip-notes">
-            <div id="notes-text">
+          <div id='trip-notes'>
+            <div id='notes-text'>
               <span>{mission.trip.notes}</span>
-              <span id="edit-icon"><img src={editIcon} alt="edit icon" className="edit-icon" /></span>
+              <span id='edit-icon'><img src={editIcon} alt='edit icon' className='edit-icon' /></span>
             </div>
           </div>
         </div>}
 
       {/* driver, vehicle, and trip view - row 2 - A*/}
       {props.type !== 'summary' &&
-        <div className="row2A">
-          <p className="subtitle">{props.subtitleText}</p>
-          {props.type === 'driver' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
-          {props.type === 'vehicle' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
+        <div className='row2A'>
+          <p className='subtitle'>{props.subtitleText}</p>
+          {props.type === 'driver' && <h1 className='title' id={`${props.type}-title`}>{props.titleText}</h1>}
+          {props.type === 'vehicle' && <h1 className='title' id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'trip' &&
-            <div className="eta">
-              <CarETA type="trip-eta" />
-              <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
+            <div className='eta'>
+              <CarETA type='trip-eta' />
+              <div className='carETAtext'>{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
             </div>
           }
         </div>
@@ -94,26 +94,26 @@ function ViewDetails(props) {
 
       {/* driver, vehicle, and trip view - row2 - B*/}
       {props.type !== 'summary' &&
-        <div className="row2B" id={`${props.type}-row2B`}>
+        <div className='row2B' id={`${props.type}-row2B`}>
 
-          {props.type === 'driver' && <div className="driver-bio">{props.driverBio}</div>}
+          {props.type === 'driver' && <div className='driver-bio'>{props.driverBio}</div>}
 
           {/* .view-row2B's content is handled by the DetailsTable component */}
-          <div class="view-details-container" id={`${props.type}-details`}>
+          <div class='view-details-container' id={`${props.type}-details`}>
             {props.type === 'vehicle' &&
-              <DetailsTable id="make-model" label="make-model-label" displayLabel="Make / Model" detail="make-model-type" displayDetail={mission.vehicle.make} />}
+              <DetailsTable id='make-model' label='make-model-label' displayLabel='Make / Model' detail='make-model-type' displayDetail={mission.vehicle.make} />}
 
             {props.type === 'vehicle' &&
-              <DetailsTable id="vehicle-color" label="vehicle-color-label" displayLabel="Color" detail="color-type" displayDetail={mission.vehicle.color} />}
+              <DetailsTable id='vehicle-color' label='vehicle-color-label' displayLabel='Color' detail='color-type' displayDetail={mission.vehicle.color} />}
 
             {props.type === 'trip' &&
-              <DetailsTable id="vehicle-vibe" label="vibe-label" displayLabel="Vehicle Vibe:" detail="vibe-name" displayDetail={mission.vibe.name} />}
+              <DetailsTable id='vehicle-vibe' label='vibe-label' displayLabel='Vehicle Vibe:' detail='vibe-name' displayDetail={mission.vibe.name} />}
           </div>
         </div>
       }
 
       {/* I didn't provide a faux onClick property so the app would run, but I know there should be one there in the real world*/}
-      <button className="button" id={`${props.type}-btn`}>{props.buttonText}</button>
+      <button className='button' id={`${props.type}-btn`}>{props.buttonText}</button>
     </div>
   )
 }
@@ -122,26 +122,26 @@ function ViewDetails(props) {
 function TripViews(props) {
   return (
     <div className='view-container' id={`${props.type}-view`}>
-      <div className="view-row1" id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
+      <div className='view-row1' id={props.type} style={{ backgroundImage: `url(${props.headerImg})` }}>
 
         {/* In Summary View only, show Your Trip heading, ETA, and trip details in .view-row1 */}
-        {props.type === 'summary' && <div className="header-subtitle">Your Trip</div>}
+        {props.type === 'summary' && <div className='header-subtitle'>Your Trip</div>}
         {props.type === 'summary' &&
-          <div className="eta" id={props.type}>
+          <div className='eta' id={props.type}>
             <CarETA type='summary-eta' />
-            <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
+            <div className='carETAtext'>{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
           </div>
         }
         {props.type === 'summary' &&
-          <div class="view-details-container" id={`${props.type}-details`}>
-            <DetailsTable id="fare" label="fare-label" displayLabel="Estimated Fare:" detail="fare-num" displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} />
-            <DetailsTable id="passengers" label="passengers-label" displayLabel="Passengers:" detail="passengers-num" displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`} />
-            <DetailsTable id="payment" label="payment-label" displayLabel="Payment:" detail="payment-type" displayDetail={mission.trip.payment} />
+          <div class='view-details-container' id={`${props.type}-details`}>
+            <DetailsTable id='fare' label='fare-label' displayLabel='Estimated Fare:' detail='fare-num' displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} />
+            <DetailsTable id='passengers' label='passengers-label' displayLabel='Passengers:' detail='passengers-num' displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`} />
+            <DetailsTable id='payment' label='payment-label' displayLabel='Payment:' detail='payment-type' displayDetail={mission.trip.payment} />
           </div>}
       </div>
       {props.type === 'trip' &&
-        <div class="map-icon">
-          <img id="map-icon" src={mapIcon} alt="waypoint indicator"></img>
+        <div class='map-icon'>
+          <img id='map-icon' src={mapIcon} alt='waypoint indicator'></img>
         </div>
       }
 
@@ -165,7 +165,7 @@ function TripViews(props) {
 // Component Defines: Base app stucture
 function App() {
 
-  // Function to change ETA time to "En route... when view #4 (#trip) is reached"
+  // Function to change ETA time to 'En route... when view #4 (#trip) is reached'
   function handleFooterText(e) {
     let tripSection = e.target.lastChild;
     let top = tripSection.getBoundingClientRect().top;
@@ -189,10 +189,10 @@ function App() {
 
   return (
     <main>
-      <div className="App">
-        <header className="app-header"> <img src={logo} alt="Alto logo" /> </header>
+      <div className='App'>
+        <header className='app-header'> <img src={logo} alt='Alto logo' /> </header>
 
-        <nav className="App-nav">
+        <nav className='App-nav'>
           <FontAwesomeIcon icon={faCircle} id='summary-view-nav' />
           <FontAwesomeIcon icon={faCircle} id='driver-view-nav' />
           <FontAwesomeIcon icon={faCircle} id='vehicle-view-nav' />
@@ -200,21 +200,21 @@ function App() {
           <FontAwesomeIcon icon={faCircleRegular} />
         </nav>
 
-        <div id="trip-views-container">
+        <div id='trip-views-container'>
           <TripViews type={'summary'} />
           <TripViews type={'driver'} headerImg={driverImg} imgAltText='A photo of your driver' />
           <TripViews type={'vehicle'} headerImg={vehicleImg} imgAltText='A photo of your vehicle' />
           <TripViews type={'trip'} headerImg={mapImg} imgAltText='A photo of your destination map' />
         </div>
 
-        <footer className="app-footer">
-          <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>
-          <div className="trip-address">
-            <div id="address-row1">{shortLocation}</div>
-            <div id="address-row2">
-              ETA: <CarETA type="footer-eta" /></div>
+        <footer className='app-footer'>
+          <div className='user-icon'><img src={userProfileIcon} alt='Profile icon' /></div>
+          <div className='trip-address'>
+            <div id='address-row1'>{shortLocation}</div>
+            <div id='address-row2'>
+              ETA: <CarETA type='footer-eta' /></div>
           </div>
-          <div className="vibes-icon"><img src={vibesIcon} alt="Change Vibes Icon" /></div>
+          <div className='vibes-icon'><img src={vibesIcon} alt='Change Vibes Icon' /></div>
         </footer>
       </div>
     </main>
