@@ -4,10 +4,11 @@ This is a mockup of four different views in Alto's Rider App. The mockup was cre
 ## How to Deoploy
 - Download the 'Alto-Coding-Exercise' directory on your local machine
 - cd into 'my-app'
+- Run `npm install` to recover node_modules
 - In the project directory, you can run `npm run start` to initialize the app in development mode
 - Running `npm run build` builds the app for production in the build folder
 
-The app is hosted at localhost:3031
+The app is hosted at localhost:3001
 
 ## App Structure and Layout
 
