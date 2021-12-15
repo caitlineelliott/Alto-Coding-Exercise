@@ -8,22 +8,33 @@
   width: 33%;
   text-align: center;
   box-sizing: border-box;
-  font-family: 'PxGrotesk-Light';
-  font-size: 3.5vw;
+  font-family: 'PxGrotesk-Regular';
   text-align: left;
   font-weight: bold;
+  color: var(--title-color);
+  border-top: 0.25px solid var(--border-color);
 }
 
 .label {
-  font-size: 3vw;
+  font-size: 0.8em;
   color: var(--dark-gray);
-  border-top: 1px solid var(--border-color);
-  padding-top: 10px;
+  padding-top: 8px;
+  padding-bottom: 3px;
+  letter-spacing: 0em;
+  font-weight: normal;
+}
+
+.trip-num {
+  font-size: 0.9em;
 }
 
 /* Styles for .Trip-details in #summary-container */
+#fare {
+  margin-right: 20px;
+}
+
 #passengers{
-  padding: 0 10px;
+  margin-right: 20px;
 }
 
 /* Styles for .Trip-details in #vehcile-container */
@@ -52,10 +63,6 @@
 
 
 /* Other details not in SectionDetails Component */
-
-.carETAtext {
-    font-size: 1.5vh;
-}
 
 #trip-btn {
     bottom: 14vh;

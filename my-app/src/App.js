@@ -31,7 +31,10 @@ function CarETA(props) {
 
   return (
     <div className="eta">
-      <h1 class="title carETA"><span className="etaTime">{carETA.slice(0, -2)}</span><span class="ampm">{carETA.slice(-2)}</span></h1>
+      {/* <div className="etaTime">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
+      <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div> */}
+
+      <div className="etaTime">5:39<span class="ampm">PM</span></div>
       <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
     </div>
   )
@@ -117,14 +120,19 @@ function SectionRows(props) {
               <p>DFW International Airport</p>
             }
 
-            <p>{mission.trip.dropoff_location.street_line1}</p>
-            <p>{mission.trip.dropoff_location.street_line2}</p>
-            <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
+            {/* <p>{mission.trip.dropoff_location.street_line1}</p> */}
+            {/* <p>{mission.trip.dropoff_location.street_line2}</p>
+            <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p> */}
+            <p>American Airlines Terminal E</p>
+            <p>Irving, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
           </div>
 
           <div id="trip-notes">
-            <div id="notes-text">{mission.trip.notes}</div>
-            <div id="edit-icon"><img src={editIcon} alt="edit icon" className="edit-icon" /></div>
+            <div id="notes-text">
+              <span>{mission.trip.notes}</span>
+              <span id="edit-icon"><img src={editIcon} alt="edit icon" className="edit-icon" /></span>
+            </div>
+            {/* <div id="edit-icon"><img src={editIcon} alt="edit icon" className="edit-icon" /></div> */}
           </div>
         </div>}
 
@@ -262,8 +270,10 @@ function App() {
           <footer className="App-footer">
             <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>
             <div className="trip-address">
-              <p className="trip-address-bold">{mission.trip.dropoff_location.name}</p>
-              <p>{mission.trip.estimated_arrival}</p>
+              {/* <p className="trip-address-bold">{mission.trip.dropoff_location.name}</p>
+              <p>{mission.trip.estimated_arrival}</p> */}
+              <p className="trip-address-bold">DFW Int'l Airport</p>
+              <p>ETA: 5:39 PM</p>
             </div>
             <div className="other-icon"><img src={vibesIcon} alt="Change Vibes Icon" /></div>
           </footer>
