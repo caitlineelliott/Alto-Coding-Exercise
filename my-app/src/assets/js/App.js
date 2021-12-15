@@ -167,20 +167,20 @@ function App() {
 
   // Function to change ETA time to 'En route... when view #4 (#trip) is reached'
   function handleFooterText(e) {
-    let tripSection = e.target.lastChild;
-    let top = tripSection.getBoundingClientRect().top;
-    let footerText = document.querySelector('#address-row2');
+    const tripSection = e.target.lastChild;
+    const top = tripSection.getBoundingClientRect().top;
+    const footerText = document.querySelector('#address-row2');
 
     if (top < 1 && top > -1) { footerText.innerHTML = 'En route..'; }
   };
 
   window.addEventListener('DOMContentLoaded', () => {
-    let parentContainer = document.querySelector('#trip-views-container');
+    const parentContainer = document.querySelector('#trip-views-container');
     parentContainer.addEventListener('scroll', handleFooterText);
   });
 
   // Lines 162-167 look for location names that have a dash and render only the part of the name before the dash
-  let location = mission.trip.dropoff_location.name;
+  const location = mission.trip.dropoff_location.name;
   let shortLocation = ''
 
   if (location.includes(' - ')) {
