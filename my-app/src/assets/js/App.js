@@ -13,16 +13,16 @@ function CarETA(props) {
   const carETA = hours + ':' + minutes + ampm;
 
   return (
-    <div className='etaTime' id={props.type}>{carETA.slice(0, -2)}<span class='ampm'>{carETA.slice(-2)}</span></div>
+    <div className='etaTime' id={props.type}>{carETA.slice(0, -2)}<span className='ampm'>{carETA.slice(-2)}</span></div>
   )
 }
 
 // Component Defines: Structure of table view for individual trip details
 function DetailsTable(props) {
   return (
-    <div class='details-table' id={`${props.id}-table`}>
-      <p id={props.label} class='details-label'>{props.displayLabel}</p>
-      <p id={props.detail} class='details-content'>{props.displayDetail}</p>
+    <div className='details-table' id={`${props.id}-table`}>
+      <p id={props.label} className='details-label'>{props.displayLabel}</p>
+      <p id={props.detail} className='details-content'>{props.displayDetail}</p>
     </div>
   )
 }
@@ -99,7 +99,7 @@ function ViewDetails(props) {
           {props.type === 'driver' && <div className='driver-bio'>{props.driverBio}</div>}
 
           {/* .view-row2B's content is handled by the DetailsTable component */}
-          <div class='view-details-container' id={`${props.type}-details`}>
+          <div className='view-details-container' id={`${props.type}-details`}>
             {props.type === 'vehicle' &&
               <DetailsTable id='make-model' label='make-model-label' displayLabel='Make / Model' detail='make-model-type' displayDetail={mission.vehicle.make} />}
 
@@ -133,14 +133,14 @@ function TripViews(props) {
           </div>
         }
         {props.type === 'summary' &&
-          <div class='view-details-container' id={`${props.type}-details`}>
+          <div className='view-details-container' id={`${props.type}-details`}>
             <DetailsTable id='fare' label='fare-label' displayLabel='Estimated Fare:' detail='fare-num' displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} />
             <DetailsTable id='passengers' label='passengers-label' displayLabel='Passengers:' detail='passengers-num' displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`} />
             <DetailsTable id='payment' label='payment-label' displayLabel='Payment:' detail='payment-type' displayDetail={mission.trip.payment} />
           </div>}
       </div>
       {props.type === 'trip' &&
-        <div class='map-icon'>
+        <div className='map-icon'>
           <img id='map-icon' src={mapIcon} alt='waypoint indicator'></img>
         </div>
       }
