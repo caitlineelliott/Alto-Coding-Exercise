@@ -40,7 +40,7 @@ function ViewDetails(props) {
 
   let airportCode = '';
   const locationName = mission.trip.dropoff_location.name;
-  let terminalName = 'American Airlines Terminal E';
+  let terminalName = 'American Airlines Terminal E'; // In real life, this would be pulling from another dataset
   let address1 = mission.trip.dropoff_location.street_line1;
   let tripCity = mission.trip.dropoff_location.city;
 
