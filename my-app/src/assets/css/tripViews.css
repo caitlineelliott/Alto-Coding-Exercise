@@ -110,9 +110,12 @@
 
 /* "Your Trip" - Final Section TripSection Styles */
 #your-trip-summary {
-  background-color: lightblue;
+  background-color: white;
   -webkit-mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
   mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
+  background-position-x: 50%;
+  background-position-y: 55%;
+  background-size: 100%;
 }
 
 /* Position attribute set on #trip-view so that the .map-icon exists in position relative to it */
