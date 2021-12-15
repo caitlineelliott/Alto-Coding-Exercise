@@ -193,10 +193,10 @@ function App() {
         <header className='app-header'> <img src={logo} alt='Alto logo' /> </header>
 
         <nav className='App-nav'>
-          <FontAwesomeIcon icon={faCircle} id='summary-view-nav' />
-          <FontAwesomeIcon icon={faCircle} id='driver-view-nav' />
-          <FontAwesomeIcon icon={faCircle} id='vehicle-view-nav' />
-          <FontAwesomeIcon icon={faCircle} id='trip-view-nav' />
+          <FontAwesomeIcon icon={faCircle} id='your-trip-view-nav' />
+          <FontAwesomeIcon icon={faCircle} id='your-driver-view-nav' />
+          <FontAwesomeIcon icon={faCircle} id='your-vehicle-view-nav' />
+          <FontAwesomeIcon icon={faCircle} id='your-trip-summary-view-nav' />
           <FontAwesomeIcon icon={faCircleRegular} />
         </nav>
 
