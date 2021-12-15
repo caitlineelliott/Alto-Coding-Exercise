@@ -38,7 +38,6 @@ p {
     height: 100vh;
     box-sizing: border-box;
     overflow-y: auto;
-    scroll-snap-coordinate: 0 0;
     scroll-snap-type: y mandatory;
 }
 
