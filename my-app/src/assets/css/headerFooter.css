@@ -62,3 +62,20 @@
   letter-spacing: 0.1em;
   font-size: 1.1em;
 }
+
+#footer-row2 {
+  font-size: 1em;
+}
+
+#footer-eta {
+  font-size: 1em;
+  display: inline;
+  font-family: 'PxGrotesk-Regular';
+}
+
+#footer-eta > .ampm {
+  font-size: 1em;
+  letter-spacing: normal;
+  margin-left: 0;
+  font-weight: normal;
+}

@@ -11,13 +11,10 @@ function CarETA(props) {
   hours = hours % 12;
   hours = hours ? hours : 12;
   minutes = minutes < 10 ? '0' + minutes : minutes;
-  var carETA = hours + ':' + minutes + ampm;
+  const carETA = hours + ':' + minutes + ampm;
 
   return (
-    <div className="eta" id={props.type}>
-      <div className="etaTime">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
-      <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
-    </div>
+    <div className="etaTime" id={props.type}>{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
   )
 }
 
@@ -85,7 +82,12 @@ function ViewDetails(props) {
           <p className="subtitle">{props.subtitleText}</p>
           {props.type === 'driver' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
           {props.type === 'vehicle' && <h1 className="title" id={`${props.type}-title`}>{props.titleText}</h1>}
-          {props.type === 'trip' && <CarETA type="trip-eta" />}
+          {props.type === 'trip' &&
+            <div className="eta" id={props.type}>
+              <CarETA type="trip-eta" />
+              <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
+            </div>
+          }
         </div>
       }
 
@@ -122,7 +124,12 @@ function TripViews(props) {
 
         {/* In Summary View only, show Your Trip heading, ETA, and trip details in .view-row1 */}
         {props.type === 'summary' && <div className="header-subtitle">Your Trip</div>}
-        {props.type === 'summary' && <CarETA type='summary-eta' />}
+        {props.type === 'summary' &&
+          <div className="eta" id={props.type}>
+            <CarETA type='summary-eta' />
+            <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
+          </div>
+        }
         {props.type === 'summary' &&
           <div class="view-details-container" id={`${props.type}-details`}>
             <DetailsTable id="fare" label="fare-label" displayLabel="Estimated Fare:" detail="fare-num" displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} />
@@ -150,6 +157,15 @@ function TripViews(props) {
 
 // Component Defines: Base app stucture
 function App() {
+
+  // Lines 162-167 look for location names that have a dash and render only the part of the name before the dash
+  let location = mission.trip.dropoff_location.name;
+  let shortLocation = ''
+
+  if (location.includes(' - ')) {
+    shortLocation = location.substring(0, location.indexOf(' - '))
+  }
+
   return (
     <main>
       <div className="App">
@@ -173,10 +189,8 @@ function App() {
         <footer className="App-footer">
           <div className="user-icon"><img src={userProfileIcon} alt="Profile icon" /></div>
           <div className="trip-address">
-            {/* <p className="trip-address-bold">{mission.trip.dropoff_location.name}</p>
-              <p>{mission.trip.estimated_arrival}</p> */}
-            <p className="trip-address-bold">DFW Int'l Airport</p>
-            <p>ETA: 5:39 PM</p>
+            <div id="footer-row1" className="trip-address-bold"> {shortLocation}  </div>
+            <div id="footer-row2">ETA: <CarETA type="footer-eta" /></div>
           </div>
           <div className="vibes-icon"><img src={vibesIcon} alt="Change Vibes Icon" /></div>
         </footer>
