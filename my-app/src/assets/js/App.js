@@ -15,10 +15,7 @@ function CarETA(props) {
 
   return (
     <div className="eta" id={props.type}>
-      {/* <div className="etaTime">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
-      <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div> */}
-
-      <div className="etaTime">5:39<span class="ampm">PM</span></div>
+      <div className="etaTime">{carETA.slice(0, -2)}<span class="ampm">{carETA.slice(-2)}</span></div>
       <div className="carETAtext">{`Estimated arrival at ${mission.trip.dropoff_location.name}`}</div>
     </div>
   )
