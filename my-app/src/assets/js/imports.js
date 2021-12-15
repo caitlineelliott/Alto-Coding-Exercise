@@ -11,6 +11,7 @@ import driverImg from '../images/Driver_photo.png';
 import vehicleImg from '../images/Vehicle_photo.png';
 import mapImg from '../images/Map_overview.png';
 import editIcon from '../images/Edit_icon.png';
+import mapIcon from '../images/Map_icon.png';
 // import phoneFrame from '../images/Phone_frame.png';
 
 // FontAwesome Icons
@@ -29,6 +30,7 @@ export {
     driverImg,
     vehicleImg,
     mapImg,
+    mapIcon,
     editIcon,
     FontAwesomeIcon,
     faCircle,

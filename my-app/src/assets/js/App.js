@@ -1,5 +1,5 @@
 import React from 'react';
-import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg } from './imports';
+import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon } from './imports';
 
 // Component Defines: Display view of car ETA from trip data
 function CarETA(props) {
@@ -27,7 +27,7 @@ function DetailsTable(props) {
   )
 }
 
-// Component Defines: Details relevant to each trip view
+// Component Defines: Details relevant to each trip view (exisiting in the bottom half of the viewport)
 function ViewDetails(props) {
 
   /*
@@ -138,8 +138,13 @@ function TripViews(props) {
             <DetailsTable id="passengers" label="passengers-label" displayLabel="Passengers:" detail="passengers-num" displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`} />
             <DetailsTable id="payment" label="payment-label" displayLabel="Payment:" detail="payment-type" displayDetail={mission.trip.payment} />
           </div>}
-
       </div>
+      {props.type === 'trip' &&
+        <div class="map-icon">
+          <img id="map-icon" src={mapIcon} alt="waypoint indicator"></img>
+        </div>
+      }
+
 
       {/* .view-row2 is further divided into .view-row2A and .view-row2B, handled by the ViewDetails component */}
       {props.type === 'summary' &&

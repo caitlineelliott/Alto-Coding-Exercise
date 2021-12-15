@@ -128,5 +128,13 @@
   background-color: lightblue;
   -webkit-mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
   mask-image: radial-gradient(rgba(0,0,0,1) 5%, rgba(0,0,0,0));
+  position: relative;
 }
 
+.map-icon {
+  width: 45px;
+  position: absolute;
+  top: 42%;
+  right: 25px;
+  z-index: 1;
+}
