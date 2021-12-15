@@ -14,8 +14,8 @@ function CarETA(props) {
 
   return (
     <div className='etaTime' id={props.type}>{carETA.slice(0, -2)}<span className='ampm'>{carETA.slice(-2)}</span></div>
-  )
-}
+  );
+};
 
 // Component Defines: Structure of table view for individual trip details
 function DetailsTable(props) {
@@ -24,8 +24,8 @@ function DetailsTable(props) {
       <p id={props.label} className='details-label'>{props.displayLabel}</p>
       <p id={props.detail} className='details-content'>{props.displayDetail}</p>
     </div>
-  )
-}
+  );
+};
 
 // Component Defines: Details relevant to each trip view (exisiting in the bottom half of the viewport)
 function ViewDetails(props) {
@@ -47,7 +47,7 @@ function ViewDetails(props) {
     address1 = terminalName;
     tripCity = 'Irving';
     airportCode = 'DFW';
-  }
+  };
 
   return (
     <div className='view-row2' id={`${props.type}-view-row2`}>
@@ -115,8 +115,8 @@ function ViewDetails(props) {
       {/* I didn't provide a faux onClick property so the app would run, but I know there should be one there in the real world*/}
       <button className='button' id={`${props.type}-btn`}>{props.buttonText}</button>
     </div>
-  )
-}
+  );
+};
 
 // Component Defines: Base structure for each of the four views in a Trip
 function TripViews(props) {
@@ -159,8 +159,8 @@ function TripViews(props) {
       {props.type === 'trip' &&
         <ViewDetails type={'trip'} subtitleText='Your Trip' buttonText='Change Vehicle Vibe' />}
     </div>
-  )
-}
+  );
+};
 
 // Component Defines: Base app stucture
 function App() {
@@ -171,8 +171,8 @@ function App() {
     let top = tripSection.getBoundingClientRect().top;
     let footerText = document.querySelector('#address-row2');
 
-    if (top < 1 && top > -1) { footerText.innerHTML = 'En route..' }
-  }
+    if (top < 1 && top > -1) { footerText.innerHTML = 'En route..'; }
+  };
 
   window.addEventListener('DOMContentLoaded', () => {
     let parentContainer = document.querySelector('#trip-views-container');
@@ -184,7 +184,7 @@ function App() {
   let shortLocation = ''
 
   if (location.includes(' - ')) {
-    shortLocation = location.substring(0, location.indexOf(' - '))
+    shortLocation = location.substring(0, location.indexOf(' - '));
   }
 
   return (
@@ -219,6 +219,6 @@ function App() {
       </div>
     </main>
   );
-}
+};
 
 export default App;
