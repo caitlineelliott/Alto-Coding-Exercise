@@ -33,6 +33,23 @@ function DetailsTable(props) {
 
 // Component Defines: Details relevant to each trip view
 function ViewDetails(props) {
+
+  /*
+      I know what I've done on lines 43-51 isn't scalable, but I wanted to show that I planned for cleaning the
+      the data a little bit re: when to show the address that was provided in the json file and when to show
+      something like a terminal name.
+  */
+
+  let airportCode = mission.trip.dropoff_location.name.slice(0, 3);
+  let terminalName = 'American Airlines Terminal E';
+  let address1 = mission.trip.dropoff_location.street_line1;
+  let tripCity = mission.trip.dropoff_location.city;
+
+  if (mission.trip.dropoff_location.name.slice(0, 3) === 'DFW') {
+    address1 = terminalName;
+    tripCity = 'Irving';
+  }
+
   return (
     <div className="view-row2" id={`${props.type}-view-row2`}>
 
@@ -47,15 +64,11 @@ function ViewDetails(props) {
           </div>
 
           <div id="dropoff-location">
-            {mission.trip.dropoff_location.name.slice(0, 3) === "DFW" &&
-              <p>DFW International Airport</p>
-            }
-
-            {/* <p>{mission.trip.dropoff_location.street_line1}</p> */}
-            {/* <p>{mission.trip.dropoff_location.street_line2}</p>
-            <p>{mission.trip.dropoff_location.city}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p> */}
-            <p>American Airlines Terminal E</p>
-            <p>Irving, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
+            {/* Line 68 replaces the DFW airport name as written in mission.json to language that matches the design mockup */}
+            {airportCode === 'DFW' && <p>DFW International Airport</p>}
+            <p>{address1}</p>
+            <p>{mission.trip.dropoff_location.street_line2}</p>
+            <p>{tripCity}, {mission.trip.dropoff_location.state} {mission.trip.dropoff_location.zipcode}</p>
           </div>
 
           <div id="trip-notes">
