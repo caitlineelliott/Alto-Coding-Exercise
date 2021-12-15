@@ -1,5 +1,5 @@
 import React from 'react';
-import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon } from './imports';
+import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon, phoneFrame } from './imports';
 
 // Component Defines: Display view of car ETA from trip data in mission.json
 function CarETA(props) {
@@ -194,9 +194,7 @@ function App() {
   return (
     <main>
       <div className='App'>
-
         <header className='app-header'> <img src={logo} alt='Alto logo' /> </header>
-
         <nav className='App-nav'>
           <FontAwesomeIcon icon={faCircle} id='your-trip-view-nav' />
           <FontAwesomeIcon icon={faCircle} id='your-driver-view-nav' />
@@ -222,7 +220,7 @@ function App() {
           <div className='vibes-icon'><img src={vibesIcon} alt='Change Vibes Icon' /></div>
         </footer>
       </div>
-    </main>
+    </main >
   );
 };
 

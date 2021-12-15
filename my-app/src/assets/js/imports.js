@@ -12,7 +12,7 @@ import vehicleImg from '../images/Vehicle_photo.png';
 import mapImg from '../images/Map_overview.png';
 import editIcon from '../images/Edit_icon.png';
 import mapIcon from '../images/Map_icon.png';
-// import phoneFrame from '../images/Phone_frame.png';
+import phoneFrame from '../images/Phone_frame.png';
 
 // FontAwesome Icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -35,5 +35,6 @@ export {
     FontAwesomeIcon,
     faCircle,
     faCircleRegular,
-    activeNav
+    activeNav,
+    phoneFrame
 };

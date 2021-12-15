@@ -6,67 +6,76 @@
 @import './tripViews.css';
 @import './viewDetails.css';
 
-
-/* Desktop View */
-@media only screen and (min-width: 1000px) {
- .App {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   height: 100vh;
-   box-sizing: border-box;
- }
-
- .phone-frame {
-   width: 25vw;
-   height: 95vh;
-   background-size: cover;
-   background-position: center center;
-   background-repeat: no-repeat;
-   position: relative;
-   display: flex;
-   justify-content: center;
-   align-items: center;
- }
- 
-  .Container {
-   width: 95%;
-   height: 97%;
-   z-index: 1;
-   position: absolute;
-   border: 10px solid black;
-   border-radius: 50px;
-   background-size: cover;
-   background-position: center center;
-   background-repeat: no-repeat;
+/* Tablet View */
+@media only screen and (min-width: 500px) and (max-width: 999px) {
+  body {
+    font-size: 20px;
   }
 
- .App-footer {
-   width: 23vw;
- }
+  .dropoffPickup {
+    width: 90%;
+  }
 
- .App-header {
-   position: sticky;
-   top: 0;
-   left: 0;
-   width: 100%;
- }
-
- .App-footer {
-  position: sticky;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  font-family: 'PxGrotesk-Light';
-  font-size: 1vw;
+  .user-icon > img,
+  .vibes-icon > img {
+    width: 5vw;
+  }
 }
+/* Desktop View */
+@media only screen and (min-width: 1000px) {
+    .view-row2,
+    #your-driver-view-row2,
+    #your-vehicle-view-row2,
+    #your-trip-summary-view-row2 {
+      padding: 2vw 8vw;
+    }
 
- .App-nav {
-  width: 1vw;
-  margin: 0 auto;
+    .dropoffPickup {
+      padding-top: 1vw;
+    }
 
-  position: fixed;
-  left: 25vw; /* same value as App width */
-}
+    #pickup-location {
+      padding-bottom: 2vw;
+    }
 
+    #dropoff-location {
+      margin-top: 2vw;
+      margin-bottom: 2vw;
+    }
+
+    .edit-icon {
+      width: 0.75vw;
+    }
+
+  /* "Your Driver" TripViews Styles */
+    #your-driver {
+      background-position-x: 53%;
+      background-position-y: 15%;
+      background-size: 60%;
+    }
+
+    .driver-bio {
+      font-size: 1em;
+    }
+
+    /* "Your Vehicle" TripViews Styles */
+    #your-vehicle {
+      background-repeat: no-repeat;
+      background-position-x: 51%;
+      background-position-y: 72.5%;
+      background-size: 20%;
+    }
+
+    .user-icon {
+      margin-left: 30vw;
+    }
+
+    .vibes-icon {
+      margin-right: 30vw;
+    }
+
+    .user-icon > img,
+    .vibes-icon > img {
+      width: 1.5vw;
+    }
 }
