@@ -102,9 +102,9 @@
     font-weight: bold;
 }
 
-#driver-row2 > .button,
-#vehicle-row2 > .button {
-    bottom: 2vh;
+#your-driver-view-row2 > .button,
+#your-vehicle-view-row2 > .button {
+    bottom: 2.5vh;
 }
 
 button:hover {
