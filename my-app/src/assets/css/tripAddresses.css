@@ -2,38 +2,43 @@
 and trip notes */
 
 .dropoffPickup {
-    padding-top: calc(10.7vw - 8vw);
-    height: 80%;
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    font-family: 'PxGrotesk-Regular';
-    font-size: 0.95em;
-    letter-spacing: 0em;
-    color: var(--title-color);
-  }
-  
-  #pickup-location {
-    padding-bottom: calc(8.9vw / 2);
-    position: relative;
-  }
-  
-  #pickup-location:before {
-    content: '';
-    position: absolute;
-    left    : 0;
-    bottom  : 0;
-    height  : 1px;
-    width   : 50%;
-    border-bottom:1px solid var(--border-color);
-  }
-  
-  #dropoff-location {
-    margin-top: calc(8.9vw / 2);
-    margin-bottom: calc(8.9vw / 2);
-    font-weight: bold;
-  }
-  
-  #trip-notes {
-    font-family: 'PxGrotesk-Light';
-  }
+  padding-top: calc(10.7vw - 8vw);
+  height: 80%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'PxGrotesk-Regular';
+  font-size: 0.95em;
+  letter-spacing: 0em;
+  color: var(--title-color);
+}
+
+#pickup-location {
+  padding-bottom: calc(8.9vw / 2);
+  position: relative;
+}
+
+#pickup-location:before {
+  content: '';
+  position: absolute;
+  left    : 0;
+  bottom  : 0;
+  height  : 1px;
+  width   : 50%;
+  border-bottom:1px solid var(--border-color);
+}
+
+#dropoff-location {
+  margin-top: calc(8.9vw / 2);
+  margin-bottom: calc(8.9vw / 2);
+  font-weight: bold;
+}
+
+#trip-notes {
+  font-family: 'PxGrotesk-Light';
+}
+
+.edit-icon {
+  margin-left: 20px;
+  width: 3vw;
+}

@@ -34,6 +34,15 @@
   margin-right: 20px;
 }
 
+#info-icon-container {
+  margin-left: 5px;
+  width: 2vw;
+}
+
+#info-icon {
+  width: 2.75vw;
+}
+
 /* Styles for .details-table in #vehcile-view */
 #color-type,
 #make-model-type {

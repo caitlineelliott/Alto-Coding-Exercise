@@ -1,5 +1,5 @@
 import React from 'react';
-import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon, phoneFrame } from './imports';
+import { mission, editIcon, logo, FontAwesomeIcon, faCircle, faCircleRegular, driverImg, vehicleImg, userProfileIcon, vibesIcon, mapImg, mapIcon, infoIcon } from './imports';
 
 // Component Defines: Display view of car ETA from trip data in mission.json
 function CarETA(props) {
@@ -22,7 +22,12 @@ function DetailsTable(props) {
   return (
     <div className='details-table' id={`${props.id}-table`}>
       <p id={props.label} className='details-label'>{props.displayLabel}</p>
-      <p id={props.detail} className='details-content'>{props.displayDetail}</p>
+      <p id={props.detail} className='details-content'>{props.displayDetail}
+        {/* Include info icon next to fare in Your Trip view*/}
+        {props.id === 'fare' &&
+          <span id="info-icon-container"><img src={props.icon} alt="info icon" id="info-icon"></img></span>
+        }
+      </p>
     </div>
   );
 };
@@ -137,7 +142,7 @@ function TripViews(props) {
         }
         {props.type === 'your-trip' &&
           <div className='view-details-container' id={`${props.type}-details`}>
-            <DetailsTable id='fare' label='fare-label' displayLabel='Estimated Fare:' detail='fare-num' displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} />
+            <DetailsTable id='fare' label='fare-label' displayLabel='Estimated Fare:' detail='fare-num' displayDetail={`$${mission.trip.estimated_fare_min.toString().slice(0, 2)} - $${mission.trip.estimated_fare_max.toString().slice(0, 2)}`} icon={infoIcon} />
             <DetailsTable id='passengers' label='passengers-label' displayLabel='Passengers:' detail='passengers-num' displayDetail={`${mission.trip.passengers_min} - ${mission.trip.passengers_max}`} />
             <DetailsTable id='payment' label='payment-label' displayLabel='Payment:' detail='payment-type' displayDetail={mission.trip.payment} />
           </div>}

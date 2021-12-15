@@ -103,11 +103,6 @@
   align-items: flex-end;
 }
 
-.edit-icon {
-  margin-left: 20px;
-  width: 3vw;
-}
-
 /* "Your Driver" TripViews Styles */
 #your-driver {
     background-position-x: 46%;
