@@ -78,4 +78,13 @@
     .vibes-icon > img {
       width: 1.5vw;
     }
+
+    #info-icon-container {
+      margin-left: 5px;
+      width: 2vw;
+    }
+    
+    #info-icon {
+      width: 0.5vw;
+    }
 }
